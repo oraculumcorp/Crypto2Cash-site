@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>API Access — Crypto2Cash.io</title>
+  <meta name="description" content="The Crypto2Cash API for AI agents, fintech platforms, and automation. Programmatic access to the best crypto-to-fiat rates across 40+ corridors."/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0c0e12;--ink2:#161921;--gold:#c9a84c;--gold2:#e8c87a;--slate2:#8892a4;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--ink);color:#e8e4dc;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(12,14,18,.94);backdrop-filter:blur(16px)}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .lm{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:1rem;color:var(--ink)}
+    .lt{font-size:1.05rem;font-weight:600;color:#e8e4dc}.lt em{font-style:normal;color:var(--gold)}
+    .nc{display:flex;gap:36px}.nc a{color:var(--slate2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}.nc a:hover,.nc a.active{color:#e8e4dc}
+    .bgo{background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:.875rem;font-weight:600;padding:9px 20px;border-radius:6px;text-decoration:none}
+    main{position:relative;z-index:1;padding-top:68px}
+    .hero{padding:100px 48px 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 50%,rgba(201,168,76,.07) 0%,transparent 60%);pointer-events:none}
+    .eb{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+    .el{width:24px;height:1px;background:var(--gold)}
+    .et{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);margin-bottom:32px}
+    .badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    h1{font-family:'Instrument Serif',serif;font-size:clamp(3rem,6vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:#f0ece3;max-width:760px}
+    h1 em{font-style:italic;color:var(--gold)}
+    .hd{margin-top:24px;font-size:1.05rem;color:var(--slate2);line-height:1.75;max-width:520px}
+    .hero-cols{margin-top:60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .use-cases{display:flex;flex-direction:column;gap:16px}
+    .uc{display:flex;align-items:flex-start;gap:16px;padding:20px 24px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px}
+    .uc-icon{font-size:1.5rem;flex-shrink:0}
+    .uc-title{font-weight:600;font-size:.95rem;color:#e8e4dc;margin-bottom:4px}
+    .uc-desc{font-size:.85rem;color:var(--slate2);line-height:1.6}
+    .cs-panel{background:var(--ink2);border:1px solid rgba(201,168,76,.2);border-radius:12px;overflow:hidden}
+    .cs-header{padding:16px 24px;background:rgba(201,168,76,.08);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .cs-title{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--gold);letter-spacing:.08em}
+    .cs-dots{display:flex;gap:6px}
+    .cs-dot{width:10px;height:10px;border-radius:50%}
+    .cs-code{padding:24px;font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.8;color:#c9d1d9;overflow-x:auto}
+    .cs-code .k{color:var(--gold)}.cs-code .s{color:#a5d6ff}.cs-code .c{color:#6b7a99}
+    .wf{padding:80px 48px;border-bottom:1px solid var(--border)}
+    .wf-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px}
+    .sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:400;letter-spacing:-.02em;color:#f0ece3;margin-bottom:16px}
+    .sp{font-size:.95rem;color:var(--slate2);line-height:1.75;margin-bottom:32px}
+    .wf-items{display:flex;flex-direction:column;gap:24px}
+    .wf-item{display:flex;gap:20px;align-items:flex-start}
+    .wf-num{font-family:'Instrument Serif',serif;font-size:2.5rem;color:rgba(201,168,76,.2);flex-shrink:0;width:40px;line-height:1}
+    .wf-title{font-weight:600;font-size:.95rem;color:#e8e4dc;margin-bottom:6px}
+    .wf-desc{font-size:.875rem;color:var(--slate2);line-height:1.65}
+    .waitlist{padding:80px 48px;background:var(--ink2)}
+    .wl-card{max-width:560px;margin:0 auto;text-align:center}
+    .wl-card .sh{max-width:100%}
+    .wl-form{margin-top:40px;display:flex;flex-direction:column;gap:12px}
+    .wl-input{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:14px 18px;font-family:'Instrument Sans',sans-serif;font-size:.9rem;color:#e8e4dc;outline:none;transition:border-color .2s}.wl-input:focus{border-color:rgba(201,168,76,.4)}.wl-input::placeholder{color:var(--slate2)}
+    .wl-select{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:14px 18px;font-family:'Instrument Sans',sans-serif;font-size:.9rem;color:var(--slate2);outline:none;appearance:none;transition:border-color .2s}.wl-select:focus{border-color:rgba(201,168,76,.4)}
+    .wl-sub{background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.95rem;border:none;border-radius:6px;padding:14px 24px;cursor:pointer;transition:all .2s;width:100%}.wl-sub:hover{background:var(--gold2)}
+    .wl-note{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2);margin-top:12px}
+    .wl-success{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--gold);margin-top:16px;display:none;line-height:1.6}
+    .endpoints{padding:80px 48px;border-bottom:1px solid var(--border)}
+    .ep-grid{margin-top:48px;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .ep{padding:24px 32px;background:var(--ink2);display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:24px}
+    .ep-method{font-family:'JetBrains Mono',monospace;font-size:.75rem;padding:4px 10px;border-radius:4px;font-weight:400;text-align:center}
+    .get{background:rgba(45,143,94,.15);color:#2d8f5e;border:1px solid rgba(45,143,94,.3)}
+    .post{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.25)}
+    .ep-path{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#e8e4dc}
+    .ep-desc{font-size:.85rem;color:var(--slate2)}
+    .ep-cs{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--slate2);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:4px 10px;border-radius:4px;white-space:nowrap}
+    footer{padding:60px 48px 40px;border-top:1px solid var(--border)}
+    .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .flt{font-size:1rem;font-weight:600}.flt em{font-style:normal;color:var(--gold)}
+    .flinks{display:flex;gap:24px;list-style:none}.flinks a{color:var(--slate2);text-decoration:none;font-size:.82rem;transition:color .2s}.flinks a:hover{color:#e8e4dc}
+    .fcp{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2)}
+    @media(max-width:900px){nav{padding:0 20px}.nc{display:none}.hero{padding:80px 20px 60px}.hero-cols{grid-template-columns:1fr;gap:40px}.wf{padding:60px 20px}.wf-inner{grid-template-columns:1fr}.waitlist{padding:60px 20px}.endpoints{padding:60px 20px}.ep{grid-template-columns:80px 1fr}.ep-cs{display:none}footer{padding:40px 20px}}
+  
+    .cursor{position:fixed;width:12px;height:12px;background:#c9a84c;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    body{cursor:none}
+  </style>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://crypto2cash.io/api/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crypto-to-Fiat Liquidity API | Crypto2Cash.io" />
+  <meta property="og:description" content="Access real-time crypto-to-fiat rates, provider matching, and payout routing via API. Built for fintech, neobanks, and enterprise." />
+  <meta property="og:url" content="https://crypto2cash.io/api/" />
+  <meta property="og:site_name" content="Crypto2Cash.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crypto-to-Fiat Liquidity API | Crypto2Cash.io" />
+  <meta name="twitter:description" content="Real-time crypto-to-fiat rates, provider matching, and payout routing. Built for fintech and enterprise." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Crypto2Cash API","url":"https://crypto2cash.io/api/","description":"Real-time crypto-to-fiat rates and provider matching API for fintech, neobanks, and enterprise platforms.","isPartOf":{"@type":"WebSite","name":"Crypto2Cash.io","url":"https://crypto2cash.io"}}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="cursor" id="C"></div>
+<div class="cursor-ring" id="CR"></div>
+
+<nav>
+  <a href="/index.html" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect x="1" y="1" width="30" height="30" rx="6.5" stroke="#c9a84c" stroke-width="1.5"/><line x1="8" y1="12" x2="22" y2="12" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="20,10 22,12 20,14" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="24" y1="20" x2="10" y2="20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="12,18 10,20 12,22" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span style="font-weight:800;font-size:1.15rem;color:var(--cream)">Crypto<span style="color:#c9a84c">2</span>Cash.io</span></a>
+  <div class="nc"><a href="index.html#solutions">Solutions</a><a href="index.html#how">How It Works</a><a href="/blog/index.html">Blog</a><a href="/company/index.html">Company</a><a href="/api/index.html" class="active">API</a></div>
+  <a href="index.html#quotes" class="bgo">Get Business Quotes</a>
+</nav>
+
+<section class="hero">
+  <div class="hbg"></div>
+  <div class="badge">Coming Q3 2026</div>
+  <div class="eb"><div class="el"></div><div class="et">Developer Access</div></div>
+  <h1>The API for<br><em>AI Agents &amp; Automation.</em></h1>
+  <p class="hd">In the AI era, agents don't click buttons — they call APIs. Crypto2Cash API gives your automation stack programmatic access to the best licensed crypto-to-fiat rates across 40+ corridors. No manual quotes. No friction. Best rate, every call.</p>
+
+  <div class="hero-cols">
+    <div class="use-cases">
+      <div class="uc"><div class="uc-icon">🤖</div><div><div class="uc-title">AI Agents &amp; DAO Treasuries</div><div class="uc-desc">Autonomous agents trading stablecoins need fiat off-ramps. Your treasury bot calls our API, gets the best rate, executes — no human in the loop.</div></div></div>
+      <div class="uc"><div class="uc-icon">⚙️</div><div><div class="uc-title">Payroll &amp; Payout Automation</div><div class="uc-desc">Automate crypto payroll for remote teams. API returns the best provider for each corridor at time of execution — rates are never stale.</div></div></div>
+      <div class="uc"><div class="uc-icon">🛒</div><div><div class="uc-title">E-Commerce Off-Ramp Routing</div><div class="uc-desc">Route crypto payments to the best fiat off-ramp automatically based on currency, volume, and speed requirements.</div></div></div>
+      <div class="uc"><div class="uc-icon">📊</div><div><div class="uc-title">Rate Intelligence &amp; Analytics</div><div class="uc-desc">Pull historical and real-time rate data across 8+ licensed platforms for your own dashboards, models, or research.</div></div></div>
+    </div>
+    <div class="cs-panel">
+      <div class="cs-header">
+        <span class="cs-title">crypto2cash-api · rate-query.js</span>
+        <div class="cs-dots"><div class="cs-dot" style="background:#ff5f57"></div><div class="cs-dot" style="background:#febc2e"></div><div class="cs-dot" style="background:#28c840"></div></div>
+      </div>
+      <div class="cs-code"><span class="c">// Get best rate for corridor</span><br><span class="k">const</span> rate = <span class="k">await</span> fetch(<br>&nbsp;&nbsp;<span class="s">'https://api.crypto2cash.io/v1/rates'</span>,<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">method</span>: <span class="s">'GET'</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;headers: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">'X-API-Key'</span>: <span class="s">'c2c_live_...'</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">'Content-Type'</span>: <span class="s">'application/json'</span><br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;params: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">from_asset</span>: <span class="s">'USDT'</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">to_currency</span>: <span class="s">'MXN'</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">amount</span>: <span class="s">50000</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">sort_by</span>: <span class="s">'net_received'</span><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>);<br><br><span class="c">// Returns ranked providers in &lt;100ms</span><br><span class="c">// { provider, rate, fee, speed, net }</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wf">
+  <div class="wf-inner">
+    <div>
+      <h2 class="sh">Why AI Agents Need This</h2>
+      <p class="sp">Every DAO treasury bot, every automated payroll system, every AI agent managing funds will need to convert crypto to fiat. The question is: which rate do they get? Without an API, they get whatever rate is hardcoded. With Crypto2Cash API, they get the best rate at execution time — always.</p>
+      <div class="wf-items">
+        <div class="wf-item"><div class="wf-num">01</div><div><div class="wf-title">Real-Time Rate Comparison</div><div class="wf-desc">Rates refreshed every 15 minutes across 8+ licensed providers. Your agent always executes at peak efficiency.</div></div></div>
+        <div class="wf-item"><div class="wf-num">02</div><div><div class="wf-title">Licensed Providers Only</div><div class="wf-desc">Every provider in our API is compliance-verified. Your agents never route to an unlicensed or unsafe platform.</div></div></div>
+        <div class="wf-item"><div class="wf-num">03</div><div><div class="wf-title">40+ Corridors</div><div class="wf-desc">USDT to MXN, NGN, PHP, BRL, KES and growing. One API endpoint covers every corridor your agent needs.</div></div></div>
+      </div>
+    </div>
+    <div class="cs-panel">
+      <div class="cs-header"><span class="cs-title">Planned API Endpoints</span></div>
+      <div class="cs-code">
+        <span class="k">GET</span>  /v1/rates<br>
+        <span class="c"># Best rates by corridor, asset, amount</span><br><br>
+        <span class="k">GET</span>  /v1/providers<br>
+        <span class="c"># All licensed providers + metadata</span><br><br>
+        <span class="k">GET</span>  /v1/corridors<br>
+        <span class="c"># Supported corridors + volume data</span><br><br>
+        <span class="k">POST</span> /v1/leads<br>
+        <span class="c"># Submit B2B lead programmatically</span><br><br>
+        <span class="k">GET</span>  /v1/prices<br>
+        <span class="c"># Live crypto market prices</span><br><br>
+        <span class="k">POST</span> /v1/webhooks<br>
+        <span class="c"># Rate alerts via webhook</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="endpoints">
+  <div class="eb"><div class="el"></div><div class="et">Planned Endpoints</div></div>
+  <h2 class="sh">API Reference Preview</h2>
+  <p class="sp" style="margin-top:16px">These endpoints are in development. Join the waitlist for early access and to influence the spec.</p>
+  <div class="ep-grid">
+    <div class="ep"><span class="ep-method get">GET</span><span class="ep-path">/v1/rates</span><span class="ep-desc">Best rates for a corridor, sorted by net recipient amount</span><span class="ep-cs">Public Preview</span></div>
+    <div class="ep"><span class="ep-method get">GET</span><span class="ep-path">/v1/providers</span><span class="ep-desc">Licensed provider list with metadata, supported assets, and corridors</span><span class="ep-cs">Public Preview</span></div>
+    <div class="ep"><span class="ep-method get">GET</span><span class="ep-path">/v1/corridors</span><span class="ep-desc">All supported corridors with volume data and best available rates</span><span class="ep-cs">Public Preview</span></div>
+    <div class="ep"><span class="ep-method get">GET</span><span class="ep-path">/v1/prices</span><span class="ep-desc">Live crypto market prices cached from multiple sources</span><span class="ep-cs">Public Preview</span></div>
+    <div class="ep"><span class="ep-method post">POST</span><span class="ep-path">/v1/leads</span><span class="ep-desc">Submit a B2B conversion quote request programmatically</span><span class="ep-cs">Early Access</span></div>
+    <div class="ep"><span class="ep-method post">POST</span><span class="ep-path">/v1/webhooks</span><span class="ep-desc">Register a webhook endpoint to receive rate alerts on your schedule</span><span class="ep-cs">Early Access</span></div>
+  </div>
+</section>
+
+<section class="waitlist">
+  <div class="wl-card">
+    <div class="eb" style="justify-content:center"><div class="el"></div><div class="et">Join Waitlist</div></div>
+    <h2 class="sh">Get Early Access to the API</h2>
+    <p class="sp" style="margin:16px auto 0;text-align:center;max-width:100%">We're building this for operators and AI agent developers first. Tell us your use case and we'll prioritize your access.</p>
+    <div class="wl-form" id="wlForm">
+      <input type="email" class="wl-input" id="wlEmail" placeholder="your@email.com"/>
+      <input type="text" class="wl-input" id="wlCompany" placeholder="Company or project name"/>
+      <select class="wl-select" id="wlUse">
+        <option value="" disabled selected>Primary use case</option>
+        <option value="ai_agent">AI Agent / DAO Treasury</option>
+        <option value="payroll">Crypto Payroll Automation</option>
+        <option value="ecommerce">E-Commerce Off-Ramp</option>
+        <option value="analytics">Rate Analytics / Research</option>
+        <option value="other">Other</option>
+      </select>
+      <select class="wl-select" id="wlVol">
+        <option value="" disabled selected>Expected monthly volume</option>
+        <option value="under_50k">Under $50,000</option>
+        <option value="50k_250k">$50K – $250K</option>
+        <option value="250k_1m">$250K – $1M</option>
+        <option value="1m_plus">$1M+</option>
+      </select>
+      <button class="wl-sub" id="wlSub" onclick="joinWaitlist()">Join API Waitlist →</button>
+    </div>
+    <div class="wl-note">No commitment. We'll reach out when your access tier is ready.</div>
+    <div class="wl-success" id="wlOk">✓ You're on the list.<br>We'll be in touch as early access opens.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="fb">
+    <div class="flt">Crypto2<em>Cash</em>.io</div>
+    <ul class="flinks"><li><a href="index.html#quotes">Get Quotes</a></li><li><a href="/blog/index.html">Blog</a></li><li><a href="/company/index.html">Company</a></li><li><a href="/api/index.html">API</a></li><li><a href="/privacy/index.html">Privacy</a></li><li><a href="/terms/index.html">Terms</a></li></ul>
+    <div class="fcp">© 2026 Crypto2Cash.io — Matching platform. Not a licensed money transmitter.</div>
+  </div>
+</footer>
+
+<script>
+const C2U='https://ljdzhbfviapcgsmgakde.supabase.co';
+const C2K='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZHpoYmZ2aWFwY2dzbWdha2RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODYzOTgsImV4cCI6MjA5MzA2MjM5OH0.kt9HktHK0Ky9rl2AXCGUe3VBcEM6j7ilqcIfY_6qS14';
+const C2H={'apikey':C2K,'Authorization':`Bearer ${C2K}`};
+
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase())))e.preventDefault();});
+
+async function joinWaitlist(){
+  const email=document.getElementById('wlEmail').value.trim();
+  const company=document.getElementById('wlCompany').value.trim();
+  const use_case=document.getElementById('wlUse').value;
+  const volume_range=document.getElementById('wlVol').value;
+  if(!email||!email.includes('@')){document.getElementById('wlEmail').style.borderColor='rgba(201,168,76,.6)';return;}
+  const btn=document.getElementById('wlSub');
+  btn.textContent='Joining...';btn.disabled=true;
+  try{
+    await fetch(`${C2U}/rest/v1/api_waitlist`,{
+      method:'POST',
+      headers:{...C2H,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify({email,company:company||null,use_case:use_case||null,volume_range:volume_range||null})
+    });
+    document.getElementById('wlForm').style.display='none';
+    document.querySelector('.wl-note').style.display='none';
+    document.getElementById('wlOk').style.display='block';
+  }catch(e){btn.textContent='Join API Waitlist ->';btn.disabled=false;}
+}
+
+// CURSOR
+const C=document.getElementById('C'),CR=document.getElementById('CR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{CR.style.width='56px';CR.style.height='56px';C.style.transform='translate(-50%,-50%) scale(.5)';});
+  el.addEventListener('mouseleave',()=>{CR.style.width='36px';CR.style.height='36px';C.style.transform='translate(-50%,-50%) scale(1)';});
+});
+</script>
+</body>
+</html>

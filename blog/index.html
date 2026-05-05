@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blog — Crypto2Cash.io | B2B Crypto-to-Fiat Intelligence</title>
+  <meta name="description" content="Operator-depth guides on B2B crypto-to-fiat conversion, treasury management, compliance, and corridor strategy for businesses moving real volume."/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0c0e12;--ink2:#161921;--gold:#c9a84c;--gold2:#e8c87a;--slate2:#8892a4;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--ink);color:#e8e4dc;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(12,14,18,.94);backdrop-filter:blur(16px)}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .lm{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:1rem;color:var(--ink)}
+    .lt{font-size:1.05rem;font-weight:600;color:#e8e4dc}.lt em{font-style:normal;color:var(--gold)}
+    .nc{display:flex;gap:36px}.nc a{color:var(--slate2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}.nc a:hover,.nc a.active{color:#e8e4dc}
+    .bgo{background:var(--gold);color:var(--ink);font-size:.875rem;font-weight:600;padding:9px 20px;border-radius:6px;text-decoration:none}
+    main{position:relative;z-index:1;padding-top:68px}
+    .ph{padding:80px 48px 60px;border-bottom:1px solid var(--border)}
+    .eb{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+    .el{width:24px;height:1px;background:var(--gold)}
+    .et{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase}
+    .ptitle{font-family:'Instrument Serif',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;letter-spacing:-.02em;color:#f0ece3;line-height:1.05}
+    .psub{margin-top:20px;font-size:1rem;color:var(--slate2);max-width:520px;line-height:1.75}
+    .fbar{padding:24px 48px;border-bottom:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .fbl{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
+    .fbtn{padding:7px 16px;border-radius:100px;font-family:'Instrument Sans',sans-serif;font-size:.78rem;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--slate2);cursor:pointer;transition:all .2s}
+    .fbtn:hover,.fbtn.active{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3);color:var(--gold)}
+    .blayout{display:grid;grid-template-columns:1fr 300px}
+    .bmain{border-right:1px solid var(--border)}
+    /* FEATURED */
+    .fp{padding:60px 48px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .fbadge{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+    .fcat{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--slate2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+    .ftl{font-family:'Instrument Serif',serif;font-size:1.8rem;font-weight:400;letter-spacing:-.02em;line-height:1.2;margin-bottom:16px;color:#f0ece3}
+    .ftl a{color:#f0ece3;text-decoration:none;transition:color .2s}.ftl a:hover{color:var(--gold)}
+    .fex{font-size:.9rem;color:var(--slate2);line-height:1.75;margin-bottom:24px}
+    .pmeta{display:flex;align-items:center;gap:12px}
+    .pd,.pt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate2)}
+    .pmd{width:3px;height:3px;background:var(--slate2);border-radius:50%}
+    .rbtn{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:.85rem;font-weight:600;text-decoration:none;margin-top:16px;background:none;border:none;cursor:pointer;font-family:'Instrument Sans',sans-serif}
+    .fvis{aspect-ratio:4/3;background:var(--ink2);border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .vcode{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--gold);opacity:.7;padding:24px;line-height:1.9}
+    /* POST GRID */
+    .pgrid{padding:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .pcard{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:rgba(255,255,255,.02);transition:border-color .2s,transform .2s}
+    .pcard:hover{border-color:rgba(201,168,76,.2);transform:translateY(-2px)}
+    .pct{padding:28px 28px 0}
+    .pcc{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+    .pcti{font-family:'Instrument Serif',serif;font-size:1.15rem;font-weight:400;letter-spacing:-.01em;line-height:1.35;margin-bottom:12px;color:#f0ece3}
+    .pcti a{color:#f0ece3;text-decoration:none;transition:color .2s}.pcti a:hover{color:var(--gold)}
+    .pce{font-size:.85rem;color:var(--slate2);line-height:1.65}
+    .pcb{margin-top:auto;padding:20px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .pcd{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2)}
+    .pcr{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--gold)}
+    .bloading{padding:48px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--slate2)}
+    .lm-wrap{padding:40px 48px;text-align:center;border-top:1px solid var(--border)}
+    .lmbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:transparent;color:var(--slate2);font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:.875rem;padding:12px 28px;border-radius:6px;cursor:pointer;transition:all .2s}
+    .lmbtn:hover{border-color:rgba(201,168,76,.3);color:var(--gold)}
+    /* SIDEBAR */
+    .side{padding:48px 32px}
+    .ss{margin-bottom:40px}
+    .stl{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .snl{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:24px}
+    .snl h4{font-family:'Instrument Serif',serif;font-size:1.1rem;font-weight:400;color:#f0ece3;margin-bottom:10px}
+    .snl p{font-size:.85rem;color:var(--slate2);line-height:1.6;margin-bottom:16px}
+    .sei{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:4px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#e8e4dc;outline:none;margin-bottom:10px}.sei::placeholder{color:var(--slate2)}
+    .ssub{width:100%;background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.85rem;border:none;border-radius:4px;padding:10px;cursor:pointer;transition:all .2s}.ssub:hover{background:var(--gold2)}
+    .ssuccess{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);margin-top:8px;display:none}
+    .ta{display:flex;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+    .ta:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .tn{font-family:'JetBrains Mono',monospace;font-size:1rem;color:rgba(201,168,76,.2);flex-shrink:0;width:24px;line-height:1.6}
+    .tt{font-size:.85rem;font-weight:500;line-height:1.4;color:#e8e4dc}
+    .tt a{color:#e8e4dc;text-decoration:none;transition:color .2s}.tt a:hover{color:var(--gold)}
+    .tc{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{padding:5px 12px;border:1px solid var(--border);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--slate2);text-decoration:none;transition:all .2s}
+    .tag:hover{border-color:rgba(201,168,76,.3);color:var(--gold)}
+    footer{padding:60px 48px 40px;border-top:1px solid var(--border)}
+    .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .flt{font-size:1rem;font-weight:600}.flt em{font-style:normal;color:var(--gold)}
+    .flinks{display:flex;gap:24px;list-style:none}.flinks a{color:var(--slate2);text-decoration:none;font-size:.82rem;transition:color .2s}.flinks a:hover{color:#e8e4dc}
+    .fcp{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2)}
+    @media(max-width:1024px){.blayout{grid-template-columns:1fr}.bmain{border-right:none}}
+    @media(max-width:768px){nav{padding:0 20px}.nc{display:none}.ph,.fbar{padding-left:20px;padding-right:20px}.fp{grid-template-columns:1fr;gap:32px;padding:40px 20px}.fvis{display:none}.pgrid{grid-template-columns:1fr;padding:32px 20px}.side{padding:32px 20px}.lm-wrap{padding:32px 20px}footer{padding:40px 20px}}
+  
+    .cursor{position:fixed;width:12px;height:12px;background:#c9a84c;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    body{cursor:none}
+  </style>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://crypto2cash.io/blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="B2B Crypto Liquidity Intel | Crypto2Cash.io Blog" />
+  <meta property="og:description" content="Operator-depth guides on crypto-to-fiat corridors, platform compliance, and B2B liquidity strategy." />
+  <meta property="og:url" content="https://crypto2cash.io/blog/" />
+  <meta property="og:site_name" content="Crypto2Cash.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="B2B Crypto Liquidity Intel | Crypto2Cash.io Blog" />
+  <meta name="twitter:description" content="Operator-depth guides on crypto-to-fiat corridors and B2B liquidity strategy." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Crypto2Cash.io — B2B Crypto Liquidity Intel","url":"https://crypto2cash.io/blog/","description":"Operator-depth guides on crypto-to-fiat corridors, platform compliance, and B2B liquidity strategy.","publisher":{"@type":"Organization","name":"Crypto2Cash.io","url":"https://crypto2cash.io"}}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="cursor" id="C"></div>
+<div class="cursor-ring" id="CR"></div>
+
+<nav>
+  <a href="/index.html" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect x="1" y="1" width="30" height="30" rx="6.5" stroke="#c9a84c" stroke-width="1.5"/><line x1="8" y1="12" x2="22" y2="12" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="20,10 22,12 20,14" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="24" y1="20" x2="10" y2="20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="12,18 10,20 12,22" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span style="font-weight:800;font-size:1.15rem;color:var(--cream)">Crypto<span style="color:#c9a84c">2</span>Cash.io</span></a>
+  <div class="nc"><a href="index.html#solutions">Solutions</a><a href="index.html#how">How It Works</a><a href="/blog/index.html" class="active">Blog</a><a href="/company/index.html">Company</a><a href="/api/index.html">API</a></div>
+  <a href="index.html#quotes" class="bgo">Get Business Quotes</a>
+</nav>
+<main>
+  <div class="ph">
+    <div class="eb"><div class="el"></div><div class="et">B2B Intelligence</div></div>
+    <h1 class="ptitle">The B2B Crypto<br>Cash Desk</h1>
+    <p class="psub">Operator-depth analysis on crypto-to-fiat treasury management, compliance, corridor strategy, and provider selection. Written for businesses, not retail.</p>
+  </div>
+  <div class="fbar">
+    <span class="fbl">Filter:</span>
+    <button class="fbtn active" onclick="filterPosts('all',this)">All</button>
+    <button class="fbtn" onclick="filterPosts('treasury',this)">Treasury</button>
+    <button class="fbtn" onclick="filterPosts('compliance',this)">Compliance</button>
+    <button class="fbtn" onclick="filterPosts('corridor-report',this)">Corridors</button>
+    <button class="fbtn" onclick="filterPosts('provider-review',this)">Provider Reviews</button>
+    <button class="fbtn" onclick="filterPosts('ai-agents',this)">AI &amp; Automation</button>
+  </div>
+  <div class="blayout">
+    <div class="bmain">
+      <div class="fp">
+        <div>
+          <div class="fbadge">// Featured</div>
+          <div class="fcat">AI &amp; Automation · Treasury</div>
+          <h2 class="ftl"><a href="#">Why Every AI Agent Will Need a Crypto-to-Fiat Off-Ramp — And What to Build Now</a></h2>
+          <p class="fex">In the AI era, autonomous agents don't click buttons — they call APIs. Every DAO treasury bot, every automated payroll system, every AI agent managing funds will need a reliable, licensed fiat off-ramp. Here's the infrastructure stack you need to build today.</p>
+          <div class="pmeta"><span class="pd">Apr 20, 2026</span><span class="pmd"></span><span class="pt">12 min read</span></div>
+          <button class="rbtn">Read Full Article →</button>
+        </div>
+        <div class="fvis">
+          <div class="vcode">Agent Treasury Stack<br>──────────────────<br>On-chain balance: $2.4M USDT<br>Monthly burn: $180K fiat<br><br>Best off-ramp today:<br>Kraken Business<br>Rate: 0.5% · Speed: 2hr<br>Net received: $179,100<br>──────────────────<br>Saved vs prev provider: $3,600</div>
+        </div>
+      </div>
+      <div class="pgrid" id="postGrid">
+        <div class="bloading" style="grid-column:1/-1">// loading articles...</div>
+      </div>
+      <div class="lm-wrap"><button class="lmbtn" onclick="loadMore()">Load More Articles ↓</button></div>
+    </div>
+    <aside class="side">
+      <div class="ss">
+        <div class="snl">
+          <h4>The B2B Cash Desk</h4>
+          <p>Weekly intel on crypto-to-fiat for operators. Rates, compliance updates, corridor reports.</p>
+          <input type="email" class="sei" id="sideEmail" placeholder="your@company.com"/>
+          <button class="ssub" onclick="sideSubscribe()">Get Weekly Intel →</button>
+          <div class="ssuccess" id="sideOk">✓ Subscribed.</div>
+        </div>
+      </div>
+      <div class="ss">
+        <div class="stl">Most Read</div>
+        <div class="ta"><span class="tn">01</span><div class="tt"><a href="#">Why AI Agents Need Fiat Off-Ramps Now</a></div></div>
+        <div class="ta"><span class="tn">02</span><div class="tt"><a href="#">DAO Treasury: How to Cash Out $1M Without Moving the Market</a></div></div>
+        <div class="ta"><span class="tn">03</span><div class="tt"><a href="#">KYB Requirements by Provider — 2026 Comparison</a></div></div>
+        <div class="ta"><span class="tn">04</span><div class="tt"><a href="#">The B2B Crypto Payroll Stack: Bitso vs Wise vs Kraken</a></div></div>
+        <div class="ta"><span class="tn">05</span><div class="tt"><a href="#">Coinbase vs Kraken for Institutional Off-Ramps</a></div></div>
+      </div>
+      <div class="ss">
+        <div class="stl">Browse by Topic</div>
+        <div class="tc">
+          <a href="#" class="tag">Treasury</a>
+          <a href="#" class="tag">Compliance</a>
+          <a href="#" class="tag">AI Agents</a>
+          <a href="#" class="tag">DAOs</a>
+          <a href="#" class="tag">KYB</a>
+          <a href="#" class="tag">US → Mexico</a>
+          <a href="#" class="tag">US → Nigeria</a>
+          <a href="#" class="tag">USDT</a>
+          <a href="#" class="tag">USDC</a>
+          <a href="#" class="tag">Payroll</a>
+        </div>
+      </div>
+      <div class="ss">
+        <div class="stl">Also From Us</div>
+        <div class="snl" style="text-align:center">
+          <p style="margin-bottom:12px">Need consumer-facing rate comparisons?</p>
+          <a href="https://sendcrypto.io" style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:.8rem;text-decoration:none">SendCrypto.io →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>
+  <div class="fb">
+    <div class="flt">Crypto2<em>Cash</em>.io</div>
+    <ul class="flinks"><li><a href="index.html#quotes">Get Quotes</a></li><li><a href="/blog/index.html">Blog</a></li><li><a href="/company/index.html">Company</a></li><li><a href="/api/index.html">API</a></li><li><a href="/privacy/index.html">Privacy</a></li><li><a href="/terms/index.html">Terms</a></li></ul>
+    <div class="fcp">© 2026 Crypto2Cash.io — Matching platform. Not a licensed money transmitter.</div>
+  </div>
+</footer>
+<script>
+const C2U='https://ljdzhbfviapcgsmgakde.supabase.co';
+const C2K='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZHpoYmZ2aWFwY2dzbWdha2RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODYzOTgsImV4cCI6MjA5MzA2MjM5OH0.kt9HktHK0Ky9rl2AXCGUe3VBcEM6j7ilqcIfY_6qS14';
+const C2H={'apikey':C2K,'Authorization':`Bearer ${C2K}`};
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase())))e.preventDefault();});
+
+const STATIC=[
+  {title:'DAO Treasury: How to Cash Out $1M in USDT Without Moving the Market',category:'treasury',published_at:'2026-04-15',read_min:10,excerpt:'Most DAOs liquidate treasury assets wrong. They announce, then sell -- and eat the slippage. Here is the institutional off-ramp playbook for large USDT positions across 5 licensed providers.'},
+  {title:'KYB Requirements by Provider -- 2026 Full Comparison (Coinbase, Kraken, MoonPay, Transak, Bitso)',category:'compliance',published_at:'2026-04-10',read_min:9,excerpt:'Every licensed provider has different KYB documentation requirements. We mapped every provider\'s requirements, processing time, and rejection reasons so your compliance team isn\'t surprised.'},
+  {title:'The B2B Crypto Payroll Stack: How to Pay 500 Contractors in Fiat Using USDC',category:'treasury',published_at:'2026-04-02',read_min:11,excerpt:'Crypto payroll at scale isn\'t just sending USDC -- it\'s the conversion layer that turns on-chain assets into local bank deposits across 40+ countries with licensed, auditable providers.'},
+  {title:'Coinbase Commerce vs Kraken for Institutional Off-Ramps -- 2026 Comparison',category:'provider-review',published_at:'2026-03-25',read_min:8,excerpt:'Both platforms serve B2B clients but with very different fee structures, minimum volumes, and KYB requirements. We break down exactly which wins for which use case.'},
+  {title:'USDT to MXN at Scale -- Best Licensed Providers for $250K+ Monthly Volume',category:'corridor-report',published_at:'2026-03-18',read_min:7,excerpt:'The US-to-Mexico corridor is the highest volume crypto remittance corridor in the world. At $250K+/month, the rate differential between providers is real money. We ran the numbers.'},
+  {title:'Building AI Agent Treasury Infrastructure -- Which Crypto Off-Ramp APIs Are Production Ready',category:'ai-agents',published_at:'2026-03-10',read_min:13,excerpt:'AI agents managing DAO treasuries need APIs, not dashboards. We evaluated every major provider\'s API quality, uptime, rate freshness, and B2B suitability for autonomous agent use.'},
+];
+
+let allPosts=[],offset=0,pageSize=6,currentFilter='all';
+
+function renderPosts(posts){
+  if(!posts.length){document.getElementById('postGrid').innerHTML='<div class="bloading" style="grid-column:1/-1">No articles found.</div>';return;}
+  document.getElementById('postGrid').innerHTML=posts.map(p=>{
+    const date=p.published_at?new Date(p.published_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'Coming Soon';
+    const rm=p.read_min||(p.content?Math.ceil(p.content.split(' ').length/200):8);
+    return `<div class="pcard"><div class="pct"><div class="pcc">${(p.category||'b2b').replace('-',' ')}</div><h3 class="pcti"><a href="#">${p.title}</a></h3><p class="pce">${p.excerpt||p.meta_description||''}</p></div><div class="pcb"><span class="pcd">${date}</span><span class="pcr">${rm} min read</span></div></div>`;
+  }).join('');
+}
+
+async function loadPosts(filter){
+  document.getElementById('postGrid').innerHTML='<div class="bloading" style="grid-column:1/-1">// loading articles...</div>';
+  try{
+    let url=`${C2U}/rest/v1/blog_posts?select=slug,title,meta_description,category,published_at,content&published=eq.true&order=published_at.desc&limit=${pageSize}`;
+    if(filter&&filter!=='all')url+=`&category=eq.${filter}`;
+    const r=await fetch(url,{headers:C2H});const data=await r.json();
+    if(!data.length)throw new Error('empty');
+    allPosts=data;renderPosts(data);
+  }catch(e){
+    let posts=STATIC;
+    if(filter&&filter!=='all')posts=posts.filter(p=>p.category===filter);
+    renderPosts(posts);
+  }
+}
+
+function filterPosts(filter,btn){
+  currentFilter=filter;
+  if(btn){document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  loadPosts(filter);
+}
+
+async function loadMore(){
+  offset+=pageSize;
+  try{
+    const r=await fetch(`${C2U}/rest/v1/blog_posts?select=slug,title,meta_description,category,published_at,content&published=eq.true&order=published_at.desc&limit=${pageSize}&offset=${offset}`,{headers:C2H});
+    const data=await r.json();if(data.length){allPosts=[...allPosts,...data];renderPosts(allPosts);}
+  }catch(e){}
+}
+
+async function sideSubscribe(){
+  const email=document.getElementById('sideEmail').value.trim();
+  if(!email||!email.includes('@'))return;
+  try{
+    await fetch(`${C2U}/rest/v1/api_waitlist`,{method:'POST',headers:{...C2H,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({email,use_case:'newsletter'})});
+    document.getElementById('sideOk').style.display='block';
+    document.getElementById('sideEmail').style.display='none';document.querySelector('.ssub').style.display='none';
+  }catch(e){}
+}
+loadPosts('all');
+
+// CURSOR
+const C=document.getElementById('C'),CR=document.getElementById('CR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{CR.style.width='56px';CR.style.height='56px';C.style.transform='translate(-50%,-50%) scale(.5)';});
+  el.addEventListener('mouseleave',()=>{CR.style.width='36px';CR.style.height='36px';C.style.transform='translate(-50%,-50%) scale(1)';});
+});
+</script>
+</body>
+</html>

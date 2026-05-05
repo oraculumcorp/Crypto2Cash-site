@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Company — Crypto2Cash.io</title>
+  <meta name="description" content="Crypto2Cash.io is a B2B matching platform connecting businesses to licensed crypto-to-fiat providers. No bias. No custody. No conflicts."/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0c0e12;--ink2:#161921;--gold:#c9a84c;--gold2:#e8c87a;--slate2:#8892a4;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--ink);color:#e8e4dc;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(12,14,18,.94);backdrop-filter:blur(16px)}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .lm{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:1rem;color:var(--ink)}
+    .lt{font-size:1.05rem;font-weight:600;color:#e8e4dc}.lt em{font-style:normal;color:var(--gold)}
+    .nc{display:flex;gap:36px}.nc a{color:var(--slate2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}.nc a:hover,.nc a.active{color:#e8e4dc}
+    .bgo{background:var(--gold);color:var(--ink);font-size:.875rem;font-weight:600;padding:9px 20px;border-radius:6px;text-decoration:none}
+    main{position:relative;z-index:1;padding-top:68px}
+    .ph{padding:80px 48px 64px;border-bottom:1px solid var(--border)}
+    .eb{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+    .el{width:24px;height:1px;background:var(--gold)}
+    .et{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase}
+    h1{font-family:'Instrument Serif',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:#f0ece3}
+    h1 em{font-style:italic;color:var(--gold)}
+    .psub{margin-top:24px;font-size:1rem;color:var(--slate2);max-width:560px;line-height:1.75}
+    .qblock{margin:0 48px;padding:56px;background:var(--ink2);border:1px solid var(--border);border-left:3px solid var(--gold)}
+    .qt{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;line-height:1.4;color:#f0ece3;max-width:720px}
+    .qt em{font-style:italic;color:var(--gold)}
+    .qa{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate2);letter-spacing:.08em}
+    .sr{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .sc{padding:44px 40px;border-right:1px solid var(--border)}
+    .sc:last-child{border-right:none}
+    .sn{font-family:'Instrument Serif',serif;font-size:3rem;color:var(--gold);margin-bottom:6px}
+    .sl{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--slate2);letter-spacing:.08em;text-transform:uppercase}
+    .content{padding:80px 48px;max-width:1200px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    h2{font-family:'Instrument Serif',serif;font-size:1.8rem;font-weight:400;letter-spacing:-.02em;margin-bottom:20px;color:#f0ece3}
+    h3{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:400;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;margin-top:24px}
+    p{font-size:.9rem;color:var(--slate2);line-height:1.8;margin-bottom:14px}p:last-child{margin-bottom:0}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:0 48px 60px;overflow:hidden}
+    .pillar{padding:36px 32px;background:var(--ink);transition:background .2s}.pillar:hover{background:rgba(201,168,76,.03)}
+    .pnum{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.14em;margin-bottom:16px}
+    .ptl{font-family:'Instrument Serif',serif;font-size:1.2rem;color:#f0ece3;margin-bottom:12px}
+    .pdesc{font-size:.875rem;color:var(--slate2);line-height:1.65}
+    .dbox{margin:0 48px 80px;padding:28px 36px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12)}
+    .dbox p{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--slate2);line-height:1.75;margin:0}
+    footer{padding:60px 48px 40px;border-top:1px solid var(--border)}
+    .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .flt{font-size:1rem;font-weight:600}.flt em{font-style:normal;color:var(--gold)}
+    .flinks{display:flex;gap:24px;list-style:none}.flinks a{color:var(--slate2);text-decoration:none;font-size:.82rem;transition:color .2s}.flinks a:hover{color:#e8e4dc}
+    .fcp{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2)}
+    @media(max-width:900px){nav{padding:0 20px}.nc{display:none}.ph,.content{padding-left:20px;padding-right:20px}.qblock,.dbox,.pillars{margin-left:20px;margin-right:20px;padding:32px 24px}.two-col{grid-template-columns:1fr;gap:40px}.sr{grid-template-columns:1fr 1fr}.sc:nth-child(2n){border-right:none}.sc{border-bottom:1px solid var(--border)}.pillars{grid-template-columns:1fr}footer{padding:40px 20px}}
+  
+    .cursor{position:fixed;width:12px;height:12px;background:#c9a84c;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    body{cursor:none}
+  </style>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://crypto2cash.io/company/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us | Crypto2Cash.io" />
+  <meta property="og:description" content="Crypto2Cash.io matches businesses with licensed crypto-to-fiat liquidity providers. B2B lead matching for high-volume remittance." />
+  <meta property="og:url" content="https://crypto2cash.io/company/" />
+  <meta property="og:site_name" content="Crypto2Cash.io" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About Us | Crypto2Cash.io" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Crypto2Cash.io","url":"https://crypto2cash.io/company/","description":"Crypto2Cash.io matches businesses with licensed crypto-to-fiat liquidity providers.","isPartOf":{"@type":"WebSite","name":"Crypto2Cash.io","url":"https://crypto2cash.io"}}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="cursor" id="C"></div>
+<div class="cursor-ring" id="CR"></div>
+
+<nav>
+  <a href="/index.html" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect x="1" y="1" width="30" height="30" rx="6.5" stroke="#c9a84c" stroke-width="1.5"/><line x1="8" y1="12" x2="22" y2="12" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="20,10 22,12 20,14" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="24" y1="20" x2="10" y2="20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="12,18 10,20 12,22" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span style="font-weight:800;font-size:1.15rem;color:var(--cream)">Crypto<span style="color:#c9a84c">2</span>Cash.io</span></a>
+  <div class="nc"><a href="index.html#solutions">Solutions</a><a href="index.html#how">How It Works</a><a href="/blog/index.html">Blog</a><a href="/company/index.html" class="active">Company</a><a href="/api/index.html">API</a></div>
+  <a href="index.html#quotes" class="bgo">Get Business Quotes</a>
+</nav>
+<main>
+  <div class="ph">
+    <div class="eb"><div class="el"></div><div class="et">About Us</div></div>
+    <h1>The B2B Platform Built<br>on <em>Operator Depth.</em></h1>
+    <p class="psub">Crypto2Cash.io connects businesses to licensed crypto-to-fiat providers. We don't custody funds. We don't hold licenses. We hold relationships — and we use them to get your business the best rates from regulated operators.</p>
+  </div>
+
+  <div class="qblock">
+    <div class="qt">"The B2B crypto-to-fiat market has a transparency problem. Businesses are getting rates that are <em>1–3% worse</em> than they could be, simply because they don't know how to shop. We fix that."</div>
+    <div class="qa">— Crypto2Cash.io, Founding Principle</div>
+  </div>
+
+  <div class="sr">
+    <div class="sc"><div class="sn">8</div><div class="sl">Licensed providers vetted</div></div>
+    <div class="sc"><div class="sn">40+</div><div class="sl">Countries covered</div></div>
+    <div class="sc"><div class="sn">&lt;24h</div><div class="sl">Quote turnaround</div></div>
+    <div class="sc"><div class="sn">$0</div><div class="sl">Cost to business clients</div></div>
+  </div>
+
+  <div class="content">
+    <div class="two-col">
+      <div>
+        <h2>What We Do</h2>
+        <p>Crypto2Cash.io is a B2B matching platform. We take businesses with recurring crypto-to-fiat conversion needs and match them with licensed, regulated providers who can execute at competitive rates.</p>
+        <p>Businesses submit their requirements — volume, asset type, destination country, payout method — and we deliver competitive quotes from up to five licensed providers within 24 hours. Businesses pay nothing. Providers pay us a referral fee when they win the business.</p>
+        <p>We have zero interest in steering you toward any single provider. Our model only works if businesses get genuinely better deals through us — so we compete entirely on quality of matches.</p>
+      </div>
+      <div>
+        <h2>Our Provider Standard</h2>
+        <h3>Licensing Verification</h3>
+        <p>Every provider in our network holds a valid Money Transmitter License or equivalent regulation in their primary operating jurisdiction. We verify licensing status quarterly — providers with lapses are suspended.</p>
+        <h3>Volume Capability</h3>
+        <p>We only work with providers capable of handling the volume ranges our business clients operate at. Consumer-only platforms are excluded from our B2B network.</p>
+        <h3>Compliance Track Record</h3>
+        <p>Providers with unresolved regulatory actions or pending enforcement proceedings are excluded until matters are resolved. We run a quarterly compliance check on every provider in our network.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pnum">// 01 — Independence</div>
+      <div class="ptl">No Preferred Provider</div>
+      <div class="pdesc">We are not owned by, funded by, or commercially exclusive to any single provider. We earn only when your business wins a better deal. That structure keeps us honest.</div>
+    </div>
+    <div class="pillar">
+      <div class="pnum">// 02 — Compliance First</div>
+      <div class="ptl">Licensed Only Network</div>
+      <div class="pdesc">Unlicensed providers are not in our network under any circumstances. Every provider is verified for valid licensing before being offered to business clients.</div>
+    </div>
+    <div class="pillar">
+      <div class="pnum">// 03 — Operator Depth</div>
+      <div class="ptl">Built by Practitioners</div>
+      <div class="pdesc">This platform was built by operators who have managed $7M+ in crypto portfolios and closed $2M+ in B2B fintech transactions. We understand the questions your compliance team will ask.</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="two-col">
+      <div>
+        <h2>Who We Serve</h2>
+        <h3>E-Commerce &amp; Retail</h3>
+        <p>Online businesses accepting cryptocurrency as payment and needing regular fiat off-ramps. Typical volume: $50K–$500K per month.</p>
+        <h3>DAOs &amp; Web3 Protocols</h3>
+        <p>Decentralized organizations managing on-chain treasuries and needing to pay vendors, contractors, and operational costs in fiat. Typical volume: $250K–$5M per month.</p>
+        <h3>Freelancer &amp; Remote Work Platforms</h3>
+        <p>Platforms paying international contractors in crypto who need local currency conversion across 40+ markets. Typical volume: $100K–$2M per month.</p>
+        <h3>International &amp; Offshore Businesses</h3>
+        <p>Multi-jurisdiction companies with complex fiat off-ramp needs requiring licensed operators across multiple regulatory frameworks.</p>
+      </div>
+      <div>
+        <h2>How We Make Money</h2>
+        <h3>Provider Referral Fees</h3>
+        <p>When we match a business client to a provider and that provider wins the relationship, the provider pays us a referral fee. This fee comes from the provider's margin — it does not affect the rate quoted to the business.</p>
+        <h3>Lead Type Pricing</h3>
+        <p>Providers pay different referral fees based on lead quality. Basic leads (email + volume range) command lower fees. Qualified leads (volume verified, KYB pre-screened) command higher fees. Exclusive leads (single-provider delivery) command premium fees. Business clients always receive quotes at the same rate regardless of lead type.</p>
+        <h3>No Business Client Fees</h3>
+        <p>Business clients are never charged. Our incentive is to deliver the best match — that's what keeps providers paying us and businesses returning.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dbox">
+    <p>IMPORTANT: Crypto2Cash.io is a lead generation and matching platform. We are not a licensed money services business, money transmitter, financial institution, or investment advisor. We do not hold, transmit, or settle funds. All financial transactions occur directly between business clients and the licensed third-party providers they select. Rate quotes are provided by third-party providers and are subject to change. Crypto2Cash.io is not responsible for transactions executed between business clients and providers.</p>
+  </div>
+</main>
+<footer>
+  <div class="fb">
+    <div class="flt">Crypto2<em>Cash</em>.io</div>
+    <ul class="flinks"><li><a href="index.html#quotes">Get Quotes</a></li><li><a href="/blog/index.html">Blog</a></li><li><a href="/company/index.html">Company</a></li><li><a href="/api/index.html">API</a></li><li><a href="/privacy/index.html">Privacy</a></li><li><a href="/terms/index.html">Terms</a></li></ul>
+    <div class="fcp">© 2026 Crypto2Cash.io — Matching platform. Not a licensed money transmitter.</div>
+  </div>
+</footer>
+<script>document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase())))e.preventDefault();});
+// CURSOR
+const C=document.getElementById('C'),CR=document.getElementById('CR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{CR.style.width='56px';CR.style.height='56px';C.style.transform='translate(-50%,-50%) scale(.5)';});
+  el.addEventListener('mouseleave',()=>{CR.style.width='36px';CR.style.height='36px';C.style.transform='translate(-50%,-50%) scale(1)';});
+});
+</script>
+</body>
+</html>

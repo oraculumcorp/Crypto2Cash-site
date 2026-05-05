@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/internal/
+Sitemap: https://crypto2cash.io/sitemap.xml

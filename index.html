@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Crypto2Cash.io — Business Crypto-to-Fiat Conversion at Scale</title>
+  <meta name="description" content="The B2B platform connecting businesses to licensed crypto-to-fiat providers. Get quotes from 5 licensed providers in under 24 hours."/>
+    <meta property="og:title" content="Crypto2Cash.io — B2B Crypto Liquidity Matching" />
+  <meta property="og:description" content="Match your business with licensed crypto-to-fiat liquidity providers. Volume pricing, API access, compliance-first." />
+  <meta property="og:url" content="https://crypto2cash.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://crypto2cash.io/og-image.png" />
+  <meta property="og:site_name" content="Crypto2Cash.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crypto2Cash.io — B2B Crypto Liquidity" />
+  <meta name="twitter:description" content="Match your business with licensed crypto-to-fiat providers. Volume pricing, API access." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://crypto2cash.io/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Crypto2Cash.io","url":"https://crypto2cash.io","description":"B2B crypto-to-fiat liquidity matching platform."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crypto2Cash.io","url":"https://crypto2cash.io","contactPoint":{"@type":"ContactPoint","email":"contact@crypto2cash.io","contactType":"sales"}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0c0e12;--ink2:#161921;--gold:#c9a84c;--gold2:#e8c87a;--cream:#f0ece3;--slate:#4a5166;--slate2:#8892a4;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--ink);color:#e8e4dc;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.012)'/%3E%3C/svg%3E");background-size:4px 4px;pointer-events:none;z-index:1000}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(12,14,18,.94);backdrop-filter:blur(16px)}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .lm{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:1rem;color:var(--ink);flex-shrink:0}
+    .lt{font-size:1.05rem;font-weight:600;color:#e8e4dc;letter-spacing:-.01em}.lt em{font-style:normal;color:var(--gold)}
+    .nc{display:flex;gap:36px}.nc a{color:var(--slate2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}.nc a:hover{color:#e8e4dc}
+    .nr{display:flex;align-items:center;gap:12px}
+    .bg{color:var(--slate2);font-size:.875rem;font-weight:500;background:none;border:1px solid var(--border);padding:9px 20px;border-radius:6px;text-decoration:none;transition:all .2s}.bg:hover{border-color:rgba(255,255,255,.15);color:#e8e4dc}
+    .bgo{background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:.875rem;font-weight:600;padding:9px 20px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}.bgo:hover{background:var(--gold2);box-shadow:0 0 24px rgba(201,168,76,.3)}
+    .hero{position:relative;padding:140px 48px 80px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(201,168,76,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 20% 70%,rgba(45,143,94,.04) 0%,transparent 60%);pointer-events:none}
+    .eb{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+    .el{width:40px;height:1px;background:var(--gold)}
+    .et{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    h1{font-family:'Instrument Serif',serif;font-size:clamp(3.2rem,6.5vw,6rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:#f0ece3;max-width:780px}
+    h1 em{font-style:italic;color:var(--gold)}
+    .hb{margin-top:28px;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:start}
+    .hd{font-size:1.05rem;color:var(--slate2);line-height:1.75;max-width:420px}
+    .ha{display:flex;flex-direction:column;gap:20px;align-items:flex-end}
+    .ccard{background:var(--ink2);border:1px solid var(--border);border-radius:12px;padding:28px 32px;width:100%;max-width:380px}
+    .cc-title{font-size:.82rem;font-weight:600;color:var(--slate2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+    .cform{display:flex;flex-direction:column;gap:10px}
+    .ci{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-family:'Instrument Sans',sans-serif;font-size:.875rem;color:#e8e4dc;outline:none;transition:border-color .2s}.ci:focus{border-color:rgba(201,168,76,.4)}.ci::placeholder{color:var(--slate2)}
+    .cs{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-family:'Instrument Sans',sans-serif;font-size:.875rem;color:var(--slate2);outline:none;cursor:pointer;appearance:none;width:100%;transition:border-color .2s}.cs:focus{border-color:rgba(201,168,76,.4)}
+    .csub{width:100%;background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.9rem;border:none;border-radius:6px;padding:13px 24px;cursor:pointer;transition:all .2s}.csub:hover{background:var(--gold2);box-shadow:0 4px 24px rgba(201,168,76,.25)}
+    .csub:disabled{opacity:.6;cursor:not-allowed}
+    .cnote{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--slate2);text-align:center;margin-top:8px;letter-spacing:.04em}
+    .csuccess{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gold);text-align:center;margin-top:12px;display:none;line-height:1.6}
+    .tb{padding:36px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:40px;overflow:hidden}
+    .tl{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--slate2);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .td{width:1px;height:24px;background:var(--border);flex-shrink:0}
+    .tls{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+    .tlogo{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--slate2);letter-spacing:.06em;opacity:.6;transition:opacity .2s}.tlogo:hover{opacity:1}
+    .sr{display:grid;grid-template-columns:repeat(4,1fr)}
+    .scel{padding:48px 40px;border-right:1px solid var(--border)}
+    .scel:last-child{border-right:none}
+    .snum{font-family:'Instrument Serif',serif;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:8px}
+    .sdesc{font-size:.875rem;color:var(--slate2);line-height:1.5}
+    .section{position:relative;z-index:1;padding:100px 48px}
+    .section.alt{background:var(--ink2)}
+    .slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+    .slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+    .slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+    .sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:#f0ece3;max-width:520px}
+    .sp{margin-top:16px;font-size:.95rem;color:var(--slate2);line-height:1.75;max-width:440px}
+    .ugrid{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .uc{padding:40px 36px;background:var(--ink);transition:background .2s;position:relative;overflow:hidden}
+    .uc:hover{background:rgba(201,168,76,.03)}
+    .uc::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .3s ease}
+    .uc:hover::before{height:100%}
+    .ui{font-size:2rem;margin-bottom:20px;display:block}
+    .utl{font-family:'Instrument Serif',serif;font-size:1.35rem;font-weight:400;color:#f0ece3;margin-bottom:12px}
+    .ud{font-size:.875rem;color:var(--slate2);line-height:1.7;margin-bottom:20px}
+    .uv{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.08em}
+    .steps{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+    .step{position:relative}
+    .stn{font-family:'Instrument Serif',serif;font-size:3.5rem;color:rgba(201,168,76,.15);line-height:1;margin-bottom:20px}
+    .sttl{font-size:1rem;font-weight:600;color:#e8e4dc;margin-bottom:10px}
+    .std{font-size:.875rem;color:var(--slate2);line-height:1.7}
+    .pgrid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pcard{padding:36px 32px;background:var(--ink2);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}.pcard:hover{border-color:rgba(201,168,76,.2)}
+    .pcard.feat{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.04);position:relative}
+    .pbdg{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;white-space:nowrap}
+    .pt{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+    .ptp{font-family:'Instrument Serif',serif;font-size:1.4rem;color:#f0ece3;margin-bottom:8px}
+    .ppr{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--slate2);margin-bottom:24px}
+    .pfeats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .pfeats li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--slate2);line-height:1.5}
+    .pfeats li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:.75rem;margin-top:2px}
+    .pcta{display:block;text-align:center;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.875rem;padding:12px 24px;border-radius:6px;text-decoration:none;cursor:pointer;transition:background .2s}.pcta:hover{background:rgba(201,168,76,.18)}
+    .pcard.feat .pcta{background:var(--gold);color:var(--ink);border-color:var(--gold)}.pcard.feat .pcta:hover{background:var(--gold2)}
+    footer{padding:60px 48px 40px;border-top:1px solid var(--border)}
+    .ft{display:grid;grid-template-columns:1fr 2fr;gap:80px;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:32px}
+    .fbrand p{margin-top:16px;font-size:.85rem;color:var(--slate2);line-height:1.7;max-width:260px}
+    .fnav{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+    .fct{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+    .fcl{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .fcl a{color:var(--slate2);text-decoration:none;font-size:.875rem;transition:color .2s}.fcl a:hover{color:#e8e4dc}
+    .fb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .fcp{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2);line-height:1.6}
+    .flg{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(74,81,102,.7);text-align:right;max-width:480px;line-height:1.6}
+    @media(max-width:900px){nav{padding:0 20px}.nc{display:none}.hero{padding:100px 20px 60px}.hb{grid-template-columns:1fr;gap:40px}.ha{align-items:flex-start}.ccard{max-width:100%}.tb{padding:24px 20px;flex-wrap:wrap}.sr{grid-template-columns:1fr 1fr}.scel:nth-child(2n){border-right:none}.scel{border-bottom:1px solid var(--border)}.section{padding:60px 20px}.ugrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}footer{padding:40px 20px}.ft{grid-template-columns:1fr;gap:40px}.fnav{grid-template-columns:1fr 1fr}.flg{text-align:left}}
+  
+    .cursor{position:fixed;width:12px;height:12px;background:#c9a84c;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    body{cursor:none}
+  </style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+<div class="cursor" id="C"></div>
+<div class="cursor-ring" id="CR"></div>
+
+<nav>
+  <a href="/index.html" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect x="1" y="1" width="30" height="30" rx="6.5" stroke="#c9a84c" stroke-width="1.5"/><line x1="8" y1="12" x2="22" y2="12" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="20,10 22,12 20,14" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="24" y1="20" x2="10" y2="20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/><polyline points="12,18 10,20 12,22" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span style="font-weight:800;font-size:1.15rem;color:var(--cream)">Crypto<span style="color:#c9a84c">2</span>Cash.io</span></a>
+  <div class="nc"><a href="#solutions">Solutions</a><a href="#how">How It Works</a><a href="/blog/">Blog</a><a href="/company/">Company</a><a href="/api/index.html">API</a></div>
+  <div class="nr"><a href="#quotes" class="bgo">Get Business Quotes</a></div>
+</nav>
+
+<section class="hero">
+  <div class="hbg"></div>
+  <div class="eb"><div class="el"></div><div class="et">B2B Crypto-to-Fiat Infrastructure</div></div>
+  <h1>Convert Crypto to Cash —<br>Best Rates, <em>Any Country.</em></h1>
+  <div class="hb">
+    <p class="hd">The institutional platform for businesses that need fast, compliant crypto-to-fiat conversion. E-commerce, DAOs, Web3 companies, and offshore operators. One form. Five licensed providers. Best rate wins.</p>
+    <div class="ha">
+      <div class="ccard" id="quotes">
+        <div class="cc-title">Get Quotes from 5 Licensed Providers</div>
+        <div class="cform">
+          <input type="text" class="ci" id="fCompany" placeholder="Company name"/>
+          <input type="email" class="ci" id="fEmail" placeholder="Business email"/>
+          <select class="cs" id="fVolume">
+            <option value="" disabled selected>Monthly conversion volume</option>
+            <option value="under_50k">Under $50,000</option>
+            <option value="50k_250k">$50K – $250K</option>
+            <option value="250k_1m">$250K – $1M</option>
+            <option value="1m_5m">$1M – $5M</option>
+            <option value="5m_plus">$5M+</option>
+          </select>
+          <select class="cs" id="fAsset">
+            <option value="" disabled selected>Primary crypto asset</option>
+            <option value="USDT">USDT</option>
+            <option value="USDC">USDC</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="csub" id="fSubmit" onclick="submitLead()">Request Business Quotes →</button>
+        </div>
+        <div class="cnote">RESPONSE IN UNDER 24 HOURS · NO COMMITMENT REQUIRED</div>
+        <div class="csuccess" id="fSuccess">✓ Request received.<br>You'll hear from matched providers within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tb">
+  <div class="tl">Licensed Providers</div>
+  <div class="td"></div>
+  <div class="tls" id="providerLogos">
+    <div class="tlogo">MoonPay</div><div class="tlogo">Transak</div><div class="tlogo">Bitso</div>
+    <div class="tlogo">Crypto.com</div><div class="tlogo">Coinbase Commerce</div>
+    <div class="tlogo">Wise Business</div><div class="tlogo">Remitly</div><div class="tlogo">Kraken</div>
+  </div>
+</div>
+
+<div class="sr">
+  <div class="scel"><div class="snum">8</div><div class="sdesc">Licensed providers<br>vetted for compliance</div></div>
+  <div class="scel"><div class="snum">40+</div><div class="sdesc">Countries with<br>active payout rails</div></div>
+  <div class="scel"><div class="snum">&lt;24h</div><div class="sdesc">Quote response<br>time guarantee</div></div>
+  <div class="scel"><div class="snum">$0</div><div class="sdesc">Platform fee to<br>get your quotes</div></div>
+</div>
+
+<section class="section" id="solutions">
+  <div class="slbl"><span class="slbt">Who We Serve</span></div>
+  <h2 class="sh">Built for Businesses Moving Real Volume</h2>
+  <p class="sp">Not retail. Not speculation. Businesses with recurring crypto-to-fiat needs that require licensed, reliable partners.</p>
+  <div class="ugrid">
+    <div class="uc"><span class="ui">🛒</span><div class="utl">E-Commerce Accepting Crypto</div><div class="ud">Online stores receiving BTC, ETH, or stablecoins. Need to convert to operating currency weekly. We find your lowest-fee licensed provider.</div><div class="uv">TYPICAL VOLUME: $50K–$500K/MO</div></div>
+    <div class="uc"><span class="ui">⚡</span><div class="utl">Web3 Companies &amp; DAOs</div><div class="ud">Treasury management for protocols and DAOs paying vendors in fiat. Convert on-chain assets compliantly. Full audit trail.</div><div class="uv">TYPICAL VOLUME: $250K–$5M/MO</div></div>
+    <div class="uc"><span class="ui">💼</span><div class="utl">Freelancer Platforms</div><div class="ud">Platforms paying international contractors in crypto that need local cash conversion. Bulk payout support across 40+ corridors.</div><div class="uv">TYPICAL VOLUME: $100K–$2M/MO</div></div>
+    <div class="uc"><span class="ui">🏢</span><div class="utl">Offshore &amp; International</div><div class="ud">Companies with multi-jurisdiction operations needing reliable fiat off-ramps. Compliance-first providers, proper KYB documentation.</div><div class="uv">TYPICAL VOLUME: $500K–$10M/MO</div></div>
+  </div>
+</section>
+
+<section class="section alt" id="how">
+  <div class="slbl"><span class="slbt">Process</span></div>
+  <h2 class="sh">From Request to Cash in 3 Steps</h2>
+  <p class="sp">We handle the sourcing, comparison, and introduction. You handle the conversion.</p>
+  <div class="steps">
+    <div class="step"><div class="stn">01</div><div class="sttl">Submit Your Requirements</div><div class="std">Tell us your volume, asset type, destination country, and payout preference. 60 seconds to complete.</div></div>
+    <div class="step"><div class="stn">02</div><div class="sttl">Receive 5 Matched Quotes</div><div class="std">Within 24 hours, competitive quotes from licensed providers matched to your specific corridor and volume.</div></div>
+    <div class="step"><div class="stn">03</div><div class="sttl">Compare &amp; Select</div><div class="std">Full fee transparency. Rate comparisons. Compliance rating. Speed. Pick the provider that fits your operation.</div></div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="slbl"><span class="slbt">Lead Types</span></div>
+  <h2 class="sh">Transparent Lead Pricing</h2>
+  <p class="sp">Providers pay us when we deliver qualified business leads. You pay nothing.</p>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="pt">Standard</div><div class="ptp">Basic Inquiry</div><div class="ppr">Email-verified contact</div>
+      <ul class="pfeats"><li>Business email verified</li><li>Volume range provided</li><li>Asset type specified</li><li>Delivered to 3 providers</li></ul>
+      <a href="#quotes" class="pcta">Get Quotes Free</a>
+    </div>
+    <div class="pcard feat">
+      <div class="pbdg">Most Common</div>
+      <div class="pt">Qualified</div><div class="ptp">Verified Lead</div><div class="ppr">Volume confirmed by call</div>
+      <ul class="pfeats"><li>Volume verified via intake call</li><li>KYB pre-screening complete</li><li>Decision-maker confirmed</li><li>Timeline to conversion stated</li><li>Delivered to 5 providers</li></ul>
+      <a href="#quotes" class="pcta">Get Quotes Free</a>
+    </div>
+    <div class="pcard">
+      <div class="pt">Premium</div><div class="ptp">Exclusive Lead</div><div class="ppr">Single provider delivery</div>
+      <ul class="pfeats"><li>All verified lead features</li><li>Delivered to ONE provider only</li><li>Provider pre-selected by you</li><li>Warm introduction included</li><li>Priority response SLA</li></ul>
+      <a href="#quotes" class="pcta">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="fbrand">
+      <div class="logo"><div class="lm">₿</div><div class="lt">Crypto2<em>Cash</em>.io</div></div>
+      <p>The B2B matching platform connecting businesses to compliant, high-volume crypto-to-fiat providers. We don't hold funds. We connect you to licensed operators.</p>
+    </div>
+    <div class="fnav">
+      <div><div class="fct">Platform</div><ul class="fcl"><li><a href="#quotes">Get Quotes</a></li><li><a href="#solutions">Provider Network</a></li><li><a href="/api/index.html">API Access</a></li></ul></div>
+      <div><div class="fct">Solutions</div><ul class="fcl"><li><a href="#solutions">E-Commerce</a></li><li><a href="#solutions">DAOs &amp; Web3</a></li><li><a href="#solutions">Freelancer Platforms</a></li></ul></div>
+      <div><div class="fct">Company</div><ul class="fcl"><li><a href="/company/">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/api/index.html">API</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+  </div>
+  <div class="fb">
+    <div class="fcp">© 2026 Crypto2Cash.io<br>A comparison and lead generation platform.</div>
+    <div class="flg">Crypto2Cash.io is a comparison and referral platform. We are not a licensed money services business, money transmitter, or financial institution. All conversions are executed by licensed third-party providers.</div>
+  </div>
+</footer>
+
+<script>
+const C2U='https://ljdzhbfviapcgsmgakde.supabase.co';
+const C2K='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZHpoYmZ2aWFwY2dzbWdha2RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODYzOTgsImV4cCI6MjA5MzA2MjM5OH0.kt9HktHK0Ky9rl2AXCGUe3VBcEM6j7ilqcIfY_6qS14';
+const C2H={'apikey':C2K,'Authorization':`Bearer ${C2K}`};
+
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase())))e.preventDefault();});
+
+async function submitLead(){
+  const company=document.getElementById('fCompany').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const volume=document.getElementById('fVolume').value;
+  const asset=document.getElementById('fAsset').value;
+  if(!company||!email||!volume||!asset){
+    [company?null:'fCompany',email?null:'fEmail',volume?null:'fVolume',asset?null:'fAsset'].filter(Boolean).forEach(id=>{
+      const el=document.getElementById(id);if(el)el.style.borderColor='rgba(201,168,76,.6)';
+    });
+    return;
+  }
+  const btn=document.getElementById('fSubmit');
+  btn.textContent='Submitting...';btn.disabled=true;
+  try{
+    await fetch(`${C2U}/functions/v1/submit-business-lead`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({company,email,volume_range:volume,asset})
+    });
+    document.querySelector('.cform').style.display='none';
+    document.querySelector('.cnote').style.display='none';
+    document.getElementById('fSuccess').style.display='block';
+  }catch(e){btn.textContent='Request Business Quotes →';btn.disabled=false;}
+}
+
+// Load live providers
+async function loadProviders(){
+  try{
+    const r=await fetch(`${C2U}/rest/v1/providers?select=name&is_active=eq.true&order=name.asc`,{headers:C2H});
+    const data=await r.json();
+    if(data.length){document.getElementById('providerLogos').innerHTML=data.map(p=>`<div class="tlogo">${p.name}</div>`).join('');}
+  }catch(e){}
+}
+loadProviders();
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'});}});
+});
+
+// CURSOR
+const C=document.getElementById('C'),CR=document.getElementById('CR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{CR.style.width='56px';CR.style.height='56px';C.style.transform='translate(-50%,-50%) scale(.5)';});
+  el.addEventListener('mouseleave',()=>{CR.style.width='36px';CR.style.height='36px';C.style.transform='translate(-50%,-50%) scale(1)';});
+});
+</script>
+</body>
+</html>
