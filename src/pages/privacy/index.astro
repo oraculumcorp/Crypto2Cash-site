@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+const updated = 'June 2, 2026';
+---
+<BaseLayout title="Privacy Policy — Crypto2Cash.io" description="Privacy Policy for Crypto2Cash.io — B2B crypto-to-fiat liquidity matching platform.">
+  <Nav/>
+  <main class="page-main">
+    <div class="slbl"><span class="slbt">Legal</span></div>
+    <h1 class="sh">Privacy Policy</h1>
+    <p class="updated">Last updated: {updated}</p>
+    <div class="prose">
+      <h2>1. Introduction</h2>
+      <p>Crypto2Cash.io ("we," "our," "us") is operated by AceK Solutions Inc, a New York corporation. This Privacy Policy explains how we collect, use, disclose, and protect information when you use our B2B lead matching platform at crypto2cash.io.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p><strong>Business Information:</strong> When you submit a quote request, we collect your company name, business email, monthly conversion volume, and primary crypto asset type.</p>
+      <p><strong>API Waitlist:</strong> When you join the API waitlist, we collect your email, company name, and use case description.</p>
+      <p><strong>Usage Data:</strong> We collect anonymized analytics data including pages visited, referral source, and general geographic region. We do not use cross-site tracking cookies.</p>
+
+      <h2>3. How We Use Your Information</h2>
+      <p>We use collected information to match your business requirements with licensed providers, deliver quote responses within 24 hours, communicate about your request status, and improve our matching algorithms and provider network.</p>
+
+      <h2>4. Information Sharing</h2>
+      <p>We share your business information with providers in our network solely for the purpose of delivering quotes. We do not sell your data to third parties. Provider access is limited to the information necessary to prepare a relevant quote for your specific requirements.</p>
+
+      <h2>5. Data Retention</h2>
+      <p>Lead data is retained for 24 months from submission. You may request deletion at any time by emailing <a href="mailto:contact@crypto2cash.io">contact@crypto2cash.io</a>.</p>
+
+      <h2>6. GDPR & CCPA Rights</h2>
+      <p>If you are located in the European Economic Area or California, you have the right to access, correct, delete, or restrict processing of your personal data. To exercise these rights, contact us at <a href="mailto:contact@crypto2cash.io">contact@crypto2cash.io</a>. We will respond within 30 days.</p>
+
+      <h2>7. Security</h2>
+      <p>All data is stored in encrypted databases. We use TLS 1.3 for all data in transit. Access to lead data is restricted to authorized personnel only.</p>
+
+      <h2>8. Contact</h2>
+      <p>AceK Solutions Inc · New York, NY · <a href="mailto:contact@crypto2cash.io">contact@crypto2cash.io</a></p>
+    </div>
+  </main>
+  <Footer/>
+</BaseLayout>
+
+<style>
+.page-main{padding:140px 48px 80px;max-width:760px;margin:0 auto;position:relative;z-index:1}
+.slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+.slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,2.5rem);font-weight:400;color:#f0ece3;line-height:1.1;margin-bottom:8px}
+.updated{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate2);margin-bottom:48px}
+.prose{font-size:1rem;color:#c8c4bc;line-height:1.85}
+.prose h2{font-family:'Instrument Serif',serif;font-size:1.35rem;color:#f0ece3;margin:40px 0 14px;font-weight:400}
+.prose p{margin-bottom:18px}
+.prose strong{color:#e8e4dc;font-weight:600}
+.prose a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.page-main{padding:100px 20px 60px}}
+</style>

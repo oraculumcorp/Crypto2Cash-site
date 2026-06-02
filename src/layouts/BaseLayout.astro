@@ -1,0 +1,72 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+const { title, description, canonical, ogImage = 'https://crypto2cash.io/og-image.png' } = Astro.props;
+const canonicalUrl = canonical || `https://crypto2cash.io${Astro.url.pathname}`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>{title}</title>
+  <meta name="description" content={description}/>
+  <meta property="og:title" content={title}/>
+  <meta property="og:description" content={description}/>
+  <meta property="og:url" content={canonicalUrl}/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content={ogImage}/>
+  <meta property="og:site_name" content="Crypto2Cash.io"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content={title}/>
+  <meta name="twitter:description" content={description}/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href={canonicalUrl}/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Crypto2Cash.io",
+    "url": "https://crypto2cash.io",
+    "description": "B2B crypto-to-fiat liquidity matching platform."
+  })}/>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Crypto2Cash.io",
+    "url": "https://crypto2cash.io",
+    "contactPoint": { "@type": "ContactPoint", "email": "contact@crypto2cash.io", "contactType": "sales" }
+  })}/>
+  <style is:global>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ink:#0c0e12;--ink2:#161921;--gold:#c9a84c;--gold2:#e8c87a;--cream:#f0ece3;--slate:#4a5166;--slate2:#8892a4;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}
+    body{font-family:'Instrument Sans',sans-serif;background:var(--ink);color:#e8e4dc;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.012)'/%3E%3C/svg%3E");background-size:4px 4px;pointer-events:none;z-index:1000}
+    .cursor{position:fixed;width:12px;height:12px;background:#c9a84c;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    body{cursor:none}
+  </style>
+</head>
+<body>
+  <div class="cursor" id="C"></div>
+  <div class="cursor-ring" id="CR"></div>
+  <slot/>
+  <script>
+    const C = document.getElementById('C') as HTMLElement;
+    const CR = document.getElementById('CR') as HTMLElement;
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(C){C.style.left=mx+'px';C.style.top=my+'px';}});
+    (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;if(CR){CR.style.left=rx+'px';CR.style.top=ry+'px';}requestAnimationFrame(a)})();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{if(CR){CR.style.width='56px';CR.style.height='56px';}if(C)C.style.transform='translate(-50%,-50%) scale(.5)';});
+      el.addEventListener('mouseleave',()=>{if(CR){CR.style.width='36px';CR.style.height='36px';}if(C)C.style.transform='translate(-50%,-50%) scale(1)';});
+    });
+  </script>
+</body>
+</html>

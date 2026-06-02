@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+const updated = 'June 2, 2026';
+---
+<BaseLayout title="Terms of Service — Crypto2Cash.io" description="Terms of Service for Crypto2Cash.io — B2B crypto-to-fiat liquidity matching platform.">
+  <Nav/>
+  <main class="page-main">
+    <div class="slbl"><span class="slbt">Legal</span></div>
+    <h1 class="sh">Terms of Service</h1>
+    <p class="updated">Last updated: {updated}</p>
+    <div class="prose">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using Crypto2Cash.io, you agree to be bound by these Terms of Service. If you do not agree, do not use this platform. These terms are governed by the laws of the State of New York.</p>
+
+      <h2>2. Platform Description</h2>
+      <p>Crypto2Cash.io is a B2B lead matching platform that connects businesses with licensed crypto-to-fiat conversion providers. We provide comparison information, quote facilitation, and provider introductions. We do not hold, transmit, convert, or custody any funds or crypto assets.</p>
+
+      <h2>3. Not a Financial Service</h2>
+      <p>Crypto2Cash.io is not a licensed money transmitter, money services business, financial institution, or investment advisor. We do not execute transactions. All conversions are performed exclusively by licensed third-party providers. You are solely responsible for evaluating providers and complying with applicable laws.</p>
+
+      <h2>4. Business Use Only</h2>
+      <p>This platform is intended for business use. By submitting a quote request, you represent that you are acting on behalf of a legitimate business entity and that your intended conversion activity is lawful in your jurisdiction.</p>
+
+      <h2>5. Lead Submission</h2>
+      <p>By submitting a quote request, you consent to your business information being shared with providers in our network for the purpose of receiving quotes. You represent that the information you provide is accurate. Submissions are non-binding and do not constitute a commitment to transact.</p>
+
+      <h2>6. Provider Relationships</h2>
+      <p>Crypto2Cash.io receives compensation from providers when qualified leads are delivered. This compensation does not influence the matching process. We do not guarantee any specific rate, availability, or outcome from any provider.</p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, AceK Solutions Inc shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this platform or any transaction with a provider introduced through this platform.</p>
+
+      <h2>8. Modifications</h2>
+      <p>We reserve the right to modify these terms at any time. Continued use of the platform after changes constitutes acceptance of the revised terms.</p>
+
+      <h2>9. Contact</h2>
+      <p>AceK Solutions Inc · New York, NY · <a href="mailto:contact@crypto2cash.io">contact@crypto2cash.io</a></p>
+    </div>
+  </main>
+  <Footer/>
+</BaseLayout>
+
+<style>
+.page-main{padding:140px 48px 80px;max-width:760px;margin:0 auto;position:relative;z-index:1}
+.slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+.slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,2.5rem);font-weight:400;color:#f0ece3;line-height:1.1;margin-bottom:8px}
+.updated{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--slate2);margin-bottom:48px}
+.prose{font-size:1rem;color:#c8c4bc;line-height:1.85}
+.prose h2{font-family:'Instrument Serif',serif;font-size:1.35rem;color:#f0ece3;margin:40px 0 14px;font-weight:400}
+.prose p{margin-bottom:18px}
+.prose a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.page-main{padding:100px 20px 60px}}
+</style>

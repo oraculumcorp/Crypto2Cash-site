@@ -1,0 +1,16 @@
+{
+  "name": "crypto2cash-site",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && echo '_worker.js' > dist/.assetsignore",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.0.0",
+    "@supabase/supabase-js": "^2.49.0",
+    "astro": "^5.0.0",
+    "isomorphic-dompurify": "^2.0.0"
+  }
+}

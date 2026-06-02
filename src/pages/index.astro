@@ -1,0 +1,277 @@
+---
+export const prerender = false;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Crypto2Cash.io — Business Crypto-to-Fiat Conversion at Scale"
+  description="The B2B platform connecting businesses to licensed crypto-to-fiat providers. Get quotes from 5 licensed providers in under 24 hours."
+>
+  <Nav currentPath="/" />
+
+  <section class="hero">
+    <div class="hbg"></div>
+    <div class="eb"><div class="el"></div><div class="et">B2B Crypto-to-Fiat Infrastructure</div></div>
+    <h1>Convert Crypto to Cash —<br>Best Rates, <em>Any Country.</em></h1>
+    <div class="hb">
+      <p class="hd">The institutional platform for businesses that need fast, compliant crypto-to-fiat conversion. E-commerce, DAOs, Web3 companies, and offshore operators. One form. Five licensed providers. Best rate wins.</p>
+      <div class="ha">
+        <div class="ccard" id="quotes">
+          <div class="cc-title">Get Quotes from 5 Licensed Providers</div>
+          <div class="cform" id="leadForm">
+            <input type="text" class="ci" id="fCompany" placeholder="Company name"/>
+            <input type="email" class="ci" id="fEmail" placeholder="Business email"/>
+            <select class="cs" id="fVolume">
+              <option value="" disabled selected>Monthly conversion volume</option>
+              <option value="under_50k">Under $50,000</option>
+              <option value="50k_250k">$50K – $250K</option>
+              <option value="250k_1m">$250K – $1M</option>
+              <option value="1m_5m">$1M – $5M</option>
+              <option value="5m_plus">$5M+</option>
+            </select>
+            <select class="cs" id="fAsset">
+              <option value="" disabled selected>Primary crypto asset</option>
+              <option value="USDT">USDT</option>
+              <option value="USDC">USDC</option>
+              <option value="BTC">Bitcoin (BTC)</option>
+              <option value="ETH">Ethereum (ETH)</option>
+              <option value="Other">Other</option>
+            </select>
+            <button class="csub" id="fSubmit">Request Business Quotes →</button>
+          </div>
+          <div class="cnote" id="leadNote">RESPONSE IN UNDER 24 HOURS · NO COMMITMENT REQUIRED</div>
+          <div class="csuccess" id="fSuccess">✓ Request received.<br>You'll hear from matched providers within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tb">
+    <div class="tl">Licensed Providers</div>
+    <div class="td"></div>
+    <div class="tls" id="providerLogos">
+      <div class="tlogo">MoonPay</div>
+      <div class="tlogo">Transak</div>
+      <div class="tlogo">Bitso</div>
+      <div class="tlogo">Crypto.com</div>
+      <div class="tlogo">Coinbase Commerce</div>
+      <div class="tlogo">Wise Business</div>
+      <div class="tlogo">Remitly</div>
+      <div class="tlogo">Kraken</div>
+    </div>
+  </div>
+
+  <div class="sr">
+    <div class="scel"><div class="snum">8</div><div class="sdesc">Licensed providers<br>vetted for compliance</div></div>
+    <div class="scel"><div class="snum">40+</div><div class="sdesc">Countries with<br>active payout rails</div></div>
+    <div class="scel"><div class="snum">&lt;24h</div><div class="sdesc">Quote response<br>time guarantee</div></div>
+    <div class="scel"><div class="snum">$0</div><div class="sdesc">Platform fee to<br>get your quotes</div></div>
+  </div>
+
+  <section class="section" id="solutions">
+    <div class="slbl"><span class="slbt">Who We Serve</span></div>
+    <h2 class="sh">Built for Businesses Moving Real Volume</h2>
+    <p class="sp">Not retail. Not speculation. Businesses with recurring crypto-to-fiat needs that require licensed, reliable partners.</p>
+    <div class="ugrid">
+      <div class="uc"><span class="ui">🛒</span><div class="utl">E-Commerce Accepting Crypto</div><div class="ud">Online stores receiving BTC, ETH, or stablecoins. Need to convert to operating currency weekly. We find your lowest-fee licensed provider.</div><div class="uv">TYPICAL VOLUME: $50K–$500K/MO</div></div>
+      <div class="uc"><span class="ui">⚡</span><div class="utl">Web3 Companies &amp; DAOs</div><div class="ud">Treasury management for protocols and DAOs paying vendors in fiat. Convert on-chain assets compliantly. Full audit trail.</div><div class="uv">TYPICAL VOLUME: $250K–$5M/MO</div></div>
+      <div class="uc"><span class="ui">💼</span><div class="utl">Freelancer Platforms</div><div class="ud">Platforms paying international contractors in crypto that need local cash conversion. Bulk payout support across 40+ corridors.</div><div class="uv">TYPICAL VOLUME: $100K–$2M/MO</div></div>
+      <div class="uc"><span class="ui">🏢</span><div class="utl">Offshore &amp; International</div><div class="ud">Companies with multi-jurisdiction operations needing reliable fiat off-ramps. Compliance-first providers, proper KYB documentation.</div><div class="uv">TYPICAL VOLUME: $500K–$10M/MO</div></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="how">
+    <div class="slbl"><span class="slbt">Process</span></div>
+    <h2 class="sh">From Request to Cash in 3 Steps</h2>
+    <p class="sp">We handle the sourcing, comparison, and introduction. You handle the conversion.</p>
+    <div class="steps">
+      <div class="step"><div class="stn">01</div><div class="sttl">Submit Your Requirements</div><div class="std">Tell us your volume, asset type, destination country, and payout preference. 60 seconds to complete.</div></div>
+      <div class="step"><div class="stn">02</div><div class="sttl">Receive 5 Matched Quotes</div><div class="std">Within 24 hours, competitive quotes from licensed providers matched to your specific corridor and volume.</div></div>
+      <div class="step"><div class="stn">03</div><div class="sttl">Compare &amp; Select</div><div class="std">Full fee transparency. Rate comparisons. Compliance rating. Speed. Pick the provider that fits your operation.</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="slbl"><span class="slbt">Lead Types</span></div>
+    <h2 class="sh">Transparent Lead Pricing</h2>
+    <p class="sp">Providers pay us when we deliver qualified business leads. You pay nothing.</p>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="pt">Standard</div><div class="ptp">Basic Inquiry</div><div class="ppr">Email-verified contact</div>
+        <ul class="pfeats">
+          <li>Business email verified</li>
+          <li>Volume range provided</li>
+          <li>Asset type specified</li>
+          <li>Delivered to 3 providers</li>
+        </ul>
+        <a href="#quotes" class="pcta">Get Quotes Free</a>
+      </div>
+      <div class="pcard feat">
+        <div class="pbdg">Most Common</div>
+        <div class="pt">Qualified</div><div class="ptp">Verified Lead</div><div class="ppr">Volume confirmed by call</div>
+        <ul class="pfeats">
+          <li>Volume verified via intake call</li>
+          <li>KYB pre-screening complete</li>
+          <li>Decision-maker confirmed</li>
+          <li>Timeline to conversion stated</li>
+          <li>Delivered to 5 providers</li>
+        </ul>
+        <a href="#quotes" class="pcta">Get Quotes Free</a>
+      </div>
+      <div class="pcard">
+        <div class="pt">Premium</div><div class="ptp">Exclusive Lead</div><div class="ppr">Single provider delivery</div>
+        <ul class="pfeats">
+          <li>All verified lead features</li>
+          <li>Delivered to ONE provider only</li>
+          <li>Provider pre-selected by you</li>
+          <li>Warm introduction included</li>
+          <li>Priority response SLA</li>
+        </ul>
+        <a href="#quotes" class="pcta">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer/>
+</BaseLayout>
+
+<style>
+.hero{position:relative;padding:140px 48px 80px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(201,168,76,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 20% 70%,rgba(45,143,94,.04) 0%,transparent 60%);pointer-events:none}
+.eb{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+.el{width:40px;height:1px;background:var(--gold)}
+.et{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(3.2rem,6.5vw,6rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:#f0ece3;max-width:780px}
+h1 em{font-style:italic;color:var(--gold)}
+.hb{margin-top:28px;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:start}
+.hd{font-size:1.05rem;color:var(--slate2);line-height:1.75;max-width:420px}
+.ha{display:flex;flex-direction:column;gap:20px;align-items:flex-end}
+.ccard{background:var(--ink2);border:1px solid var(--border);border-radius:12px;padding:28px 32px;width:100%;max-width:380px}
+.cc-title{font-size:.82rem;font-weight:600;color:var(--slate2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.cform{display:flex;flex-direction:column;gap:10px}
+.ci{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-family:'Instrument Sans',sans-serif;font-size:.875rem;color:#e8e4dc;outline:none;transition:border-color .2s}
+.ci:focus{border-color:rgba(201,168,76,.4)}
+.ci::placeholder{color:var(--slate2)}
+.cs{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-family:'Instrument Sans',sans-serif;font-size:.875rem;color:var(--slate2);outline:none;cursor:pointer;appearance:none;width:100%;transition:border-color .2s}
+.cs:focus{border-color:rgba(201,168,76,.4)}
+.csub{width:100%;background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.9rem;border:none;border-radius:6px;padding:13px 24px;cursor:pointer;transition:all .2s}
+.csub:hover{background:var(--gold2);box-shadow:0 4px 24px rgba(201,168,76,.25)}
+.csub:disabled{opacity:.6;cursor:not-allowed}
+.cnote{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--slate2);text-align:center;margin-top:8px;letter-spacing:.04em}
+.csuccess{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gold);text-align:center;margin-top:12px;display:none;line-height:1.6}
+.tb{padding:36px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:40px;overflow:hidden;position:relative;z-index:1}
+.tl{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--slate2);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.td{width:1px;height:24px;background:var(--border);flex-shrink:0}
+.tls{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.tlogo{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--slate2);letter-spacing:.06em;opacity:.6;transition:opacity .2s}
+.tlogo:hover{opacity:1}
+.sr{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.scel{padding:48px 40px;border-right:1px solid var(--border)}
+.scel:last-child{border-right:none}
+.snum{font-family:'Instrument Serif',serif;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:8px}
+.sdesc{font-size:.875rem;color:var(--slate2);line-height:1.5}
+.section{position:relative;z-index:1;padding:100px 48px}
+.section.alt{background:var(--ink2)}
+.slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+.slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:#f0ece3;max-width:520px}
+.sp{margin-top:16px;font-size:.95rem;color:var(--slate2);line-height:1.75;max-width:440px}
+.ugrid{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.uc{padding:40px 36px;background:var(--ink);transition:background .2s;position:relative;overflow:hidden}
+.uc:hover{background:rgba(201,168,76,.03)}
+.uc::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .3s ease}
+.uc:hover::before{height:100%}
+.ui{font-size:2rem;margin-bottom:20px;display:block}
+.utl{font-family:'Instrument Serif',serif;font-size:1.35rem;font-weight:400;color:#f0ece3;margin-bottom:12px}
+.ud{font-size:.875rem;color:var(--slate2);line-height:1.7;margin-bottom:20px}
+.uv{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.08em}
+.steps{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.step{position:relative}
+.stn{font-family:'Instrument Serif',serif;font-size:3.5rem;color:rgba(201,168,76,.15);line-height:1;margin-bottom:20px}
+.sttl{font-size:1rem;font-weight:600;color:#e8e4dc;margin-bottom:10px}
+.std{font-size:.875rem;color:var(--slate2);line-height:1.7}
+.pgrid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcard{padding:36px 32px;background:var(--ink2);border:1px solid var(--border);border-radius:12px;transition:border-color .2s;position:relative}
+.pcard:hover{border-color:rgba(201,168,76,.2)}
+.pcard.feat{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.04)}
+.pbdg{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;white-space:nowrap}
+.pt{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.ptp{font-family:'Instrument Serif',serif;font-size:1.4rem;color:#f0ece3;margin-bottom:8px}
+.ppr{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--slate2);margin-bottom:24px}
+.pfeats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.pfeats li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--slate2);line-height:1.5}
+.pfeats li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:.75rem;margin-top:2px}
+.pcta{display:block;text-align:center;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.875rem;padding:12px 24px;border-radius:6px;text-decoration:none;cursor:pointer;transition:background .2s}
+.pcta:hover{background:rgba(201,168,76,.18)}
+.pcard.feat .pcta{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pcard.feat .pcta:hover{background:var(--gold2)}
+@media(max-width:900px){.hero{padding:100px 20px 60px}.hb{grid-template-columns:1fr;gap:40px}.ha{align-items:flex-start}.ccard{max-width:100%}.tb{padding:24px 20px;flex-wrap:wrap}.sr{grid-template-columns:1fr 1fr}.scel:nth-child(2n){border-right:none}.scel{border-bottom:1px solid var(--border)}.section{padding:60px 20px}.ugrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}}
+</style>
+
+<script>
+document.getElementById('fSubmit')?.addEventListener('click', async () => {
+  const company = (document.getElementById('fCompany') as HTMLInputElement)?.value.trim();
+  const email = (document.getElementById('fEmail') as HTMLInputElement)?.value.trim();
+  const volume = (document.getElementById('fVolume') as HTMLSelectElement)?.value;
+  const asset = (document.getElementById('fAsset') as HTMLSelectElement)?.value;
+
+  if (!company || !email || !volume || !asset) {
+    ['fCompany','fEmail','fVolume','fAsset'].forEach(id => {
+      const el = document.getElementById(id) as HTMLElement;
+      const val = (el as HTMLInputElement)?.value;
+      if (!val) el.style.borderColor = 'rgba(201,168,76,.6)';
+    });
+    return;
+  }
+
+  const btn = document.getElementById('fSubmit') as HTMLButtonElement;
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  try {
+    await fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ company, email, volume, asset }),
+    });
+    const form = document.getElementById('leadForm') as HTMLElement;
+    const note = document.getElementById('leadNote') as HTMLElement;
+    const success = document.getElementById('fSuccess') as HTMLElement;
+    if (form) form.style.display = 'none';
+    if (note) note.style.display = 'none';
+    if (success) success.style.display = 'block';
+  } catch {
+    btn.textContent = 'Request Business Quotes →';
+    btn.disabled = false;
+  }
+});
+
+// Load live providers from Supabase
+async function loadProviders() {
+  try {
+    const url = (import.meta as any).env?.PUBLIC_SUPABASE_URL || '';
+    const key = (import.meta as any).env?.PUBLIC_SUPABASE_ANON_KEY || '';
+    if (!url || !key) return;
+    const r = await fetch(
+      `${url}/rest/v1/providers?select=name&active=eq.true&order=name.asc`,
+      { headers: { 'apikey': key, 'Authorization': `Bearer ${key}`, 'Accept-Profile': 'crypto2cash' } }
+    );
+    const data = await r.json();
+    if (Array.isArray(data) && data.length) {
+      const el = document.getElementById('providerLogos');
+      if (el) el.innerHTML = data.map((p: any) => `<div class="tlogo">${p.name}</div>`).join('');
+    }
+  } catch {}
+}
+loadProviders();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector((a as HTMLAnchorElement).getAttribute('href') || '');
+    if (t) { e.preventDefault(); window.scrollTo({ top: (t as HTMLElement).offsetTop - 80, behavior: 'smooth' }); }
+  });
+});
+</script>

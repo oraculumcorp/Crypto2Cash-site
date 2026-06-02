@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout title="Company — Crypto2Cash.io" description="Crypto2Cash.io is the B2B infrastructure layer connecting businesses to licensed crypto-to-fiat liquidity providers globally.">
+  <Nav/>
+  <main class="page-main">
+    <div class="slbl"><span class="slbt">About</span></div>
+    <h1 class="sh">The B2B Crypto Liquidity Layer</h1>
+    <div class="prose">
+      <p>Crypto2Cash.io is a B2B matching platform that connects businesses with licensed, compliance-vetted crypto-to-fiat conversion providers. We serve e-commerce operators, DAOs, Web3 companies, freelancer platforms, and offshore enterprises that need fast, reliable, and compliant fiat off-ramps at scale.</p>
+      <h2>What We Do</h2>
+      <p>We operate as a pure comparison and referral platform. When a business submits a quote request, we match their volume, asset type, and corridor requirements against our vetted network of licensed providers. Businesses receive multiple competitive quotes within 24 hours — at no cost to them.</p>
+      <p>Our revenue comes from providers when we deliver qualified leads. This model ensures our incentives are always aligned with the business: we only succeed when you find the right provider.</p>
+      <h2>Our Network</h2>
+      <p>Every provider in the Crypto2Cash network is independently vetted for licensing, compliance posture, and operational reliability. We maintain active relationships with licensed money services businesses, regulated exchanges, and payment processors across 40+ countries.</p>
+      <h2>Who Operates This Platform</h2>
+      <p>Crypto2Cash.io is operated by AceK Solutions Inc, a company incorporated in the State of New York. We are not a licensed money transmitter, financial institution, or money services business. We do not hold, transmit, or convert funds. All transactions are executed by licensed third-party providers.</p>
+      <h2>Contact</h2>
+      <p>For business inquiries, provider partnerships, or press: <a href="mailto:contact@crypto2cash.io">contact@crypto2cash.io</a></p>
+    </div>
+  </main>
+  <Footer/>
+</BaseLayout>
+
+<style>
+.page-main{padding:140px 48px 80px;max-width:760px;margin:0 auto;position:relative;z-index:1}
+.slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+.slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;color:#f0ece3;line-height:1.1;margin-bottom:48px}
+.prose{font-size:1rem;color:#c8c4bc;line-height:1.85}
+.prose h2{font-family:'Instrument Serif',serif;font-size:1.5rem;color:#f0ece3;margin:40px 0 16px;font-weight:400}
+.prose p{margin-bottom:20px}
+.prose a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.page-main{padding:100px 20px 60px}}
+</style>

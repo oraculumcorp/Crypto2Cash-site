@@ -1,0 +1,42 @@
+---
+export interface Props {
+  currentPath?: string;
+}
+const { currentPath = '/' } = Astro.props;
+---
+<nav>
+  <a href="/" class="logo">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+      <rect x="1" y="1" width="30" height="30" rx="6.5" stroke="#c9a84c" stroke-width="1.5"/>
+      <line x1="8" y1="12" x2="22" y2="12" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
+      <polyline points="20,10 22,12 20,14" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="24" y1="20" x2="10" y2="20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
+      <polyline points="12,18 10,20 12,22" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span class="lt">Crypto<em>2</em>Cash.io</span>
+  </a>
+  <div class="nc">
+    <a href="/#solutions" class={currentPath === '/' ? 'active' : ''}>Solutions</a>
+    <a href="/#how">How It Works</a>
+    <a href="/blog/">Blog</a>
+    <a href="/company/">Company</a>
+    <a href="/api-access/">API</a>
+  </div>
+  <div class="nr">
+    <a href="/#quotes" class="bgo">Get Business Quotes</a>
+  </div>
+</nav>
+
+<style>
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(12,14,18,.94);backdrop-filter:blur(16px)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.lt{font-weight:800;font-size:1.15rem;color:var(--cream)}
+.lt em{font-style:normal;color:var(--gold)}
+.nc{display:flex;gap:36px}
+.nc a{color:var(--slate2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+.nc a:hover,.nc a.active{color:#e8e4dc}
+.nr{display:flex;align-items:center;gap:12px}
+.bgo{background:var(--gold);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:.875rem;font-weight:600;padding:9px 20px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.bgo:hover{background:var(--gold2);box-shadow:0 0 24px rgba(201,168,76,.3)}
+@media(max-width:900px){nav{padding:0 20px}.nc{display:none}}
+</style>

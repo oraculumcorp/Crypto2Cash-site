@@ -1,0 +1,17 @@
+---
+export const prerender = true;
+const pages = ['','blog/','company/','api-access/','privacy/','terms/'];
+const base = 'https://crypto2cash.io';
+const now = new Date().toISOString().split('T')[0];
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {pages.map(p => (
+    <url>
+      <loc>{base}/{p}</loc>
+      <lastmod>{now}</lastmod>
+      <changefreq>{p === '' ? 'weekly' : 'monthly'}</changefreq>
+      <priority>{p === '' ? '1.0' : '0.8'}</priority>
+    </url>
+  ))}
+</urlset>

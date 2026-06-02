@@ -1,0 +1,65 @@
+---
+export const prerender = false;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getPublicClient } from '../../lib/supabase';
+
+const env = (Astro.locals as any).runtime?.env ?? {};
+let posts: any[] = [];
+try {
+  const supabase = getPublicClient(env);
+  const { data } = await supabase
+    .from('blog_posts')
+    .select('slug,title,meta_description,category,published_at,author')
+    .eq('published', true)
+    .order('published_at', { ascending: false });
+  posts = data ?? [];
+} catch {}
+---
+<BaseLayout title="Blog — Crypto2Cash.io" description="B2B crypto-to-fiat insights, compliance guides, and liquidity intelligence for businesses.">
+  <Nav/>
+  <main class="blog-main">
+    <div class="bh">
+      <div class="slbl"><span class="slbt">Intelligence</span></div>
+      <h1 class="sh">B2B Crypto Liquidity Blog</h1>
+      <p class="sp">Compliance guides, provider analysis, and corridor intelligence for businesses moving real volume.</p>
+    </div>
+    {posts.length === 0 ? (
+      <div class="empty">
+        <p>Content coming soon. Check back shortly.</p>
+      </div>
+    ) : (
+      <div class="bgrid">
+        {posts.map((post: any) => (
+          <a href={`/blog/${post.slug}/`} class="bcard">
+            <div class="bcat">{post.category}</div>
+            <h2 class="btitle">{post.title}</h2>
+            <p class="bdesc">{post.meta_description}</p>
+            <div class="bmeta">{post.author} · {new Date(post.published_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
+          </a>
+        ))}
+      </div>
+    )}
+  </main>
+  <Footer/>
+</BaseLayout>
+
+<style>
+.blog-main{padding:140px 48px 80px;min-height:80vh;position:relative;z-index:1}
+.bh{max-width:600px;margin-bottom:64px}
+.slbl{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.slbl::before{content:'';width:24px;height:1px;background:var(--gold)}
+.slbt{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.sh{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;color:#f0ece3;line-height:1.1;margin-bottom:16px}
+.sp{font-size:.95rem;color:var(--slate2);line-height:1.75}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bcard{background:var(--ink2);border:1px solid var(--border);border-radius:12px;padding:32px;text-decoration:none;transition:border-color .2s;display:flex;flex-direction:column;gap:12px}
+.bcard:hover{border-color:rgba(201,168,76,.3)}
+.bcat{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+.btitle{font-family:'Instrument Serif',serif;font-size:1.2rem;color:#f0ece3;line-height:1.3;font-weight:400}
+.bdesc{font-size:.875rem;color:var(--slate2);line-height:1.6;flex:1}
+.bmeta{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--slate2);margin-top:8px}
+.empty{text-align:center;padding:80px 0;color:var(--slate2);font-family:'JetBrains Mono',monospace;font-size:.875rem}
+@media(max-width:900px){.blog-main{padding:100px 20px 60px}.bgrid{grid-template-columns:1fr}}
+</style>
