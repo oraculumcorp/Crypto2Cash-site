@@ -25,7 +25,6 @@ export async function POST({ request, locals }: APIContext) {
     return new Response(JSON.stringify({ error: 'Invalid email' }), { status: 400 });
   }
 
-  // Save to Supabase
   const supabase = getServiceClient(env);
   const { error } = await supabase.from('business_leads').insert({
     company: company.trim(),
@@ -37,27 +36,6 @@ export async function POST({ request, locals }: APIContext) {
 
   if (error) {
     return new Response(JSON.stringify({ error: 'Database error' }), { status: 500 });
-  }
-
-  // Send notification email via Cloudflare Email Workers
-  try {
-    const notifyEmail = env.NOTIFY_EMAIL ?? 'contact@crypto2cash.io';
-    const { EmailMessage } = await import('cloudflare:email');
-    const { createMimeMessage } = await import('mimetext');
-
-    const msg = createMimeMessage();
-    msg.setSender({ name: 'Crypto2Cash Leads', addr: 'contact@crypto2cash.io' });
-    msg.setRecipient(notifyEmail);
-    msg.setSubject(`New Lead: ${company} — ${volume} ${asset}`);
-    msg.addMessage({
-      contentType: 'text/plain',
-      data: `New business lead received:\n\nCompany: ${company}\nEmail: ${email}\nVolume: ${volume}\nAsset: ${asset}\n\nLog in to Supabase to view and manage leads.`,
-    });
-
-    const message = new EmailMessage('contact@crypto2cash.io', notifyEmail, msg.asRaw());
-    await (env as any).SEND_EMAIL.send(message);
-  } catch {
-    // Email failure does not block lead capture
   }
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
