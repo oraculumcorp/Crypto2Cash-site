@@ -1,5 +1,5 @@
 import type { APIContext } from 'astro';
-import { getServiceClient } from '../../lib/supabase';
+import { getPublicClient } from '../../lib/supabase';
 import { isAllowedOrigin, isValidEmail } from '../../lib/security';
 
 export const prerender = false;
@@ -25,7 +25,7 @@ export async function POST({ request, locals }: APIContext) {
     return new Response(JSON.stringify({ error: 'Invalid email' }), { status: 400 });
   }
 
-  const supabase = getServiceClient(env);
+  const supabase = getPublicClient(env);
   const { error } = await supabase.from('business_leads').insert({
     company: company.trim(),
     email: email.trim().toLowerCase(),
