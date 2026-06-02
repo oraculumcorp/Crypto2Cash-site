@@ -7,8 +7,11 @@ export const prerender = false;
 export async function POST({ request, locals }: APIContext) {
   const env = (locals as any).runtime?.env ?? {};
   const origin = request.headers.get('origin');
+  const referer = request.headers.get('referer');
   const allowed = env.ALLOWED_ORIGINS?.split(',') ?? ['https://crypto2cash.io'];
-  if (!isAllowedOrigin(origin, allowed)) {
+  const isAllowed = !origin || isAllowedOrigin(origin, allowed) ||
+    allowed.some((o: string) => referer?.startsWith(o));
+  if (!isAllowed) {
     return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
   }
 
@@ -35,7 +38,8 @@ export async function POST({ request, locals }: APIContext) {
   });
 
   if (error) {
-    return new Response(JSON.stringify({ error: 'Database error' }), { status: 500 });
+    console.error('Supabase error:', JSON.stringify(error));
+    return new Response(JSON.stringify({ error: 'Database error', detail: error.message }), { status: 500 });
   }
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
