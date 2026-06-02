@@ -1,5 +1,4 @@
 import type { APIContext } from 'astro';
-import { getPublicClient } from '../../lib/supabase';
 import { isAllowedOrigin, isValidEmail } from '../../lib/security';
 
 export const prerender = false;
@@ -28,18 +27,32 @@ export async function POST({ request, locals }: APIContext) {
     return new Response(JSON.stringify({ error: 'Invalid email' }), { status: 400 });
   }
 
-  const supabase = getPublicClient(env);
-  const { error } = await supabase.from('business_leads').insert({
-    company: company.trim(),
-    email: email.trim().toLowerCase(),
-    volume,
-    asset,
-    status: 'new',
+  const url = env.PUBLIC_SUPABASE_URL;
+  const key = env.PUBLIC_SUPABASE_ANON_KEY;
+
+  const res = await fetch(`${url}/rest/v1/business_leads`, {
+    method: 'POST',
+    headers: {
+      'apikey': key,
+      'Authorization': `Bearer ${key}`,
+      'Content-Type': 'application/json',
+      'Accept-Profile': 'crypto2cash',
+      'Content-Profile': 'crypto2cash',
+      'Prefer': 'return=minimal',
+    },
+    body: JSON.stringify({
+      company: company.trim(),
+      email: email.trim().toLowerCase(),
+      volume,
+      asset,
+      status: 'new',
+    }),
   });
 
-  if (error) {
-    console.error('Supabase error:', JSON.stringify(error));
-    return new Response(JSON.stringify({ error: 'Database error', detail: error.message }), { status: 500 });
+  if (!res.ok) {
+    const err = await res.text();
+    console.error('Supabase error:', err);
+    return new Response(JSON.stringify({ error: 'Database error', detail: err }), { status: 500 });
   }
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
