@@ -30,14 +30,12 @@ export async function POST({ request, locals }: APIContext) {
   const url = env.PUBLIC_SUPABASE_URL;
   const key = env.PUBLIC_SUPABASE_ANON_KEY;
 
-  const res = await fetch(`${url}/rest/v1/business_leads`, {
+  const res = await fetch(`${url}/rest/v1/c2c_business_leads`, {
     method: 'POST',
     headers: {
       'apikey': key,
       'Authorization': `Bearer ${key}`,
       'Content-Type': 'application/json',
-      'Accept-Profile': 'crypto2cash',
-      'Content-Profile': 'crypto2cash',
       'Prefer': 'return=minimal',
     },
     body: JSON.stringify({
